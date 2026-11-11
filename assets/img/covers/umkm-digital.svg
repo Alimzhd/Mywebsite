@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" gradientTransform="rotate(124 .5 .5)">
+    <stop offset="0" stop-color="#2a1638"/>
+    <stop offset=".55" stop-color="#5a2a70"/>
+    <stop offset="1" stop-color="#2a1638"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".18" r=".8">
+    <stop offset="0" stop-color="#c4553f" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#c4553f" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx=".16" cy=".9" r=".7">
+    <stop offset="0" stop-color="#f0bb98" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#f0bb98" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="shade" x1="0" y1=".45" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="70"/>
+  </filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#glow)"/>
+<rect width="1200" height="800" fill="url(#glow2)"/>
+<g filter="url(#soft)" opacity=".55">
+  <ellipse cx="273.80316152703017" cy="305.5074478313327" rx="205.45203488320112" ry="229.60112700238824" fill="#c4553f"/>
+  <ellipse cx="828.5036140494049" cy="596.554599404335" rx="222.3443764075637" ry="193.18300670012832" fill="#f0bb98"/>
+</g>
+<g class="motif"><rect x="989" y="135" width="193" height="137" rx="61" fill="#f0bb98" opacity="0.11" transform="rotate(-6.5 989 135)"/><rect x="999" y="563" width="124" height="174" rx="43" fill="#c4553f" opacity="0.18" transform="rotate(2.2 999 563)"/><rect x="410" y="204" width="231" height="135" rx="53" fill="#f0bb98" opacity="0.14" transform="rotate(-0.2 410 204)"/><rect x="921" y="564" width="271" height="260" rx="57" fill="#c4553f" opacity="0.20" transform="rotate(-7.8 921 564)"/><rect x="354" y="317" width="289" height="120" rx="25" fill="#f0bb98" opacity="0.20" transform="rotate(9.1 354 317)"/><rect x="672" y="137" width="183" height="142" rx="36" fill="#c4553f" opacity="0.22" transform="rotate(-6.8 672 137)"/><rect x="706" y="167" width="334" height="261" rx="63" fill="#f0bb98" opacity="0.23" transform="rotate(-2.5 706 167)"/></g>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect width="1200" height="800" filter="url(#grain)" opacity=".16" style="mix-blend-mode:overlay"/>
+</svg>

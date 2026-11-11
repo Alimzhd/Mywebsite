@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" gradientTransform="rotate(173 .5 .5)">
+    <stop offset="0" stop-color="#321018"/>
+    <stop offset=".55" stop-color="#7a1d2a"/>
+    <stop offset="1" stop-color="#321018"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".18" r=".8">
+    <stop offset="0" stop-color="#2c3f70" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#2c3f70" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx=".16" cy=".9" r=".7">
+    <stop offset="0" stop-color="#d9b9a3" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#d9b9a3" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="shade" x1="0" y1=".45" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="70"/>
+  </filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#glow)"/>
+<rect width="1200" height="800" fill="url(#glow2)"/>
+<g filter="url(#soft)" opacity=".55">
+  <ellipse cx="388.5295921936631" cy="313.51103263907135" rx="339.05371583998203" ry="213.0970663111657" fill="#2c3f70"/>
+  <ellipse cx="945.2594996243715" cy="576.8457136675715" rx="369.31339018046856" ry="191.4207650627941" fill="#d9b9a3"/>
+</g>
+<g class="motif"><g fill="none" stroke="#2c3f70"><circle cx="360" cy="400" r="140" stroke-width="1.4" opacity="0.60" stroke-dasharray="none"/><circle cx="360" cy="400" r="236" stroke-width="1.9" opacity="0.50" stroke-dasharray="none"/><circle cx="360" cy="400" r="332" stroke-width="2.4" opacity="0.40" stroke-dasharray="14 22"/><circle cx="360" cy="400" r="428" stroke-width="2.9" opacity="0.30" stroke-dasharray="none"/></g><circle cx="360" cy="400" r="86" fill="#d9b9a3" opacity=".8"/></g>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect width="1200" height="800" filter="url(#grain)" opacity=".16" style="mix-blend-mode:overlay"/>
+</svg>

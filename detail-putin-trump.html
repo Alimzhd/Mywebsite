@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Artikel — Redawn News</title>
+  <meta name="description" content="Redawn News: kabar terkini, analisis mendalam, dan cerita yang menjelaskan." />
+  <meta name="theme-color" content="#fdfaf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141110" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Redawn News" />
+  <meta property="og:title" content="Artikel — Redawn News" />
+  <meta property="og:description" content="Kabar terkini, analisis mendalam, dan cerita yang menjelaskan." />
+  <meta property="og:image" content="assets/img/covers/putin-trump.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Artikel — Redawn News" />
+  <meta name="twitter:description" content="Kabar terkini, analisis mendalam, dan cerita yang menjelaskan." />
+  <link rel="canonical" href="detail-putin-trump.html?id=putin-trump" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/brand/mark.svg" />
+  <link rel="alternate icon" href="Gemini_Generated_Image_9gk6ox9gk6ox9gk6.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,75..125,100..900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+
+  <script>
+    // Terapkan tema sebelum paint agar tidak ada flash.
+    (() => {
+      try {
+        const stored = JSON.parse(localStorage.getItem("redawn:theme"));
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.dataset.theme = stored;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json" id="article-jsonld">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "Artikel Redawn News",
+      "publisher": { "@type": "NewsMediaOrganization", "name": "Redawn News" }
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Langsung ke konten utama</a>
+
+  <!-- Icon sprite: stroke-based, tanpa dependensi font ikon -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="brand-mark" viewBox="0 0 48 48">
+      <path d="M24 9.5a14.5 14.5 0 0 0-14.5 14.5v12h29V24A14.5 14.5 0 0 0 24 9.5Z" />
+      <path d="M15.5 36a8.5 8.5 0 0 1 17 0Z" fill="currentColor" stroke="none" />
+      <path d="M24 17.5v4.2M18.3 20l2.1 3.6M29.7 20l-2.1 3.6M14.6 24.8l3.9 1.3M33.4 24.8l-3.9 1.3" />
+      <path d="M5 39.6h38" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.8-3.8" /></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6.5 4.75h11a1 1 0 0 1 1 1V20l-6.5-4.3L5.5 20V5.75a1 1 0 0 1 1-1Z" /></symbol>
+    <symbol id="i-bookmark-filled" viewBox="0 0 24 24"><path d="M6.5 4.75h11a1 1 0 0 1 1 1V20l-6.5-4.3L5.5 20V5.75a1 1 0 0 1 1-1Z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V4M8 7.5 12 3.5l4 4" /><path d="M5 13.5V19a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5.5" /></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4" /></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a8.5 8.5 0 0 0 10.5 10.5Z" /></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" /></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" /></symbol>
+    <symbol id="i-arrow-up-left" viewBox="0 0 24 24"><path d="M17 17 7 7M7 15V7h8" /></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.5 7 8.5 6 8.5-6" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 6.5-2.5 8.5h17c0-2-2.5-2.5-2.5-8.5Z" /><path d="M10 21h4" /></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 6.5" /></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.5 13.5a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5L12 7" /><path d="M13.5 10.5a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5L12 17" /></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6" /></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7.2v.3" /></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z" /><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" /></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 3 6 13.5h5L10.5 21 18 10.5h-5z" /></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3s5.5 4.2 5.5 9.5a5.5 5.5 0 0 1-11 0c0-2.2 1-3.8 2.2-5 0 2 1 3.2 2.1 3.2 0-3.1 1.2-5.7 1.2-7.7Z" /></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V13M9.3 20V8M14.7 20v-5M20 20V4" /></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13.5" r="3.5" /></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="2" /><path d="m15 10 6-3v10l-6-3z" /></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 6 12 6s9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" /><circle cx="12" cy="12" r="3" /></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6" /><path d="M20 4v5h-5" /></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z" /></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.2 6.8v.01" /></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" /><path d="m10.5 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-x-social" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" /></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14.5 8.5H17V5h-2.5A4.5 4.5 0 0 0 10 9.5V12H7v3.5h3V21h4v-5.5h3l.5-3.5H14V9.5c0-.6.4-1 1-1Z" /></symbol>
+    <symbol id="i-rss" viewBox="0 0 24 24"><path d="M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9M5 19h.01" /></symbol>
+  </svg>
+
+  <!-- Indikator kemajuan baca -->
+  <div class="reading-progress" id="reading-progress" aria-hidden="true"><span></span></div>
+
+  <!-- ======================= TOP APP BAR ======================= -->
+  <header class="app-bar" id="app-bar">
+    <div class="app-bar__inner">
+      <button class="icon-btn app-bar__menu" data-menu-open aria-label="Buka menu" aria-haspopup="dialog">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="Redawn. Fajar Baru Informasi — beranda">
+        <span class="brand__mark"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#brand-mark" /></svg></span>
+        <span class="brand__text">
+          <span class="brand__name">Redawn<em>.</em></span>
+          <span class="brand__tag">Fajar Baru Informasi</span>
+        </span>
+      </a>
+
+      <button class="search-trigger" type="button" data-search-open aria-haspopup="dialog">
+        <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+        <span>Cari berita, topik, atau penulis&hellip;</span>
+        <kbd aria-hidden="true">Ctrl K</kbd>
+      </button>
+
+      <div class="app-bar__actions">
+        <button class="icon-btn tip" type="button" data-theme-toggle data-tip="Ganti tema" aria-label="Ganti tema: aktifkan mode gelap" aria-pressed="false">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+        </button>
+        <button class="icon-btn tip" type="button" data-bookmarks-open aria-haspopup="dialog" data-tip="Tersimpan" aria-label="Buka artikel tersimpan (0)">
+          <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+          <span class="icon-btn__badge" data-saved-count aria-hidden="true">0</span>
+        </button>
+        <button class="btn btn--tonal btn--sm app-bar__subscribe" type="button" data-action="subscribe">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkle" /></svg>
+          Langganan
+        </button>
+        <button class="avatar" type="button" data-action="login" aria-label="Buka akun AR">
+          AR
+          <span class="avatar__status" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= KATEGORI ======================= -->
+  <nav class="category-bar" aria-label="Kategori berita">
+    <div class="category-bar__inner">
+      <div class="category-bar__scroller" id="category-scroller">
+        <span class="nav-blob" id="nav-blob" aria-hidden="true"></span>
+        <a class="chip-nav" href="index.html#terbaru" data-cat="terbaru"><span class="chip-nav__spark" aria-hidden="true"></span>Terbaru</a>
+        <a class="chip-nav" href="index.html#nasional" data-cat="nasional"><span class="chip-nav__spark" aria-hidden="true"></span>Nasional</a>
+        <a class="chip-nav" href="index.html#internasional" data-cat="internasional"><span class="chip-nav__spark" aria-hidden="true"></span>Internasional</a>
+        <a class="chip-nav" href="index.html#ekonomi" data-cat="ekonomi"><span class="chip-nav__spark" aria-hidden="true"></span>Ekonomi</a>
+        <a class="chip-nav" href="index.html#teknologi" data-cat="teknologi"><span class="chip-nav__spark" aria-hidden="true"></span>Teknologi</a>
+        <a class="chip-nav" href="index.html#hukum" data-cat="hukum"><span class="chip-nav__spark" aria-hidden="true"></span>Hukum</a>
+        <a class="chip-nav" href="index.html#politik" data-cat="politik"><span class="chip-nav__spark" aria-hidden="true"></span>Politik</a>
+        <a class="chip-nav" href="index.html#olahraga" data-cat="olahraga"><span class="chip-nav__spark" aria-hidden="true"></span>Olahraga</a>
+        <a class="chip-nav" href="index.html#video" data-cat="video"><span class="chip-nav__spark" aria-hidden="true"></span>Video</a>
+        <a class="chip-nav" href="index.html#opini" data-cat="opini"><span class="chip-nav__spark" aria-hidden="true"></span>Opini</a>
+        <button class="chip-nav" type="button" data-menu-open aria-haspopup="dialog">
+          <svg class="icon icon--xs" aria-hidden="true"><use href="#i-plus" /></svg>Lainnya
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======================= TICKER ======================= -->
+  <div class="ticker-wrap">
+    <div class="shell">
+      <div class="ticker" aria-label="Berita terkini">
+        <span class="ticker__label"><span class="live-dot" aria-hidden="true"></span>TERKINI</span>
+        <div class="ticker__viewport">
+          <div class="ticker__track">
+            <a class="ticker__item" href="detail-putin-trump.html?id=putin-trump">Putin dan Trump bertemu tertutup di Helsinki <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=spbu-ledakan">Ledakan SPBU di kawasan industri, 45 orang luka <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=mrt-fase2">MRT Fase 2 capai progres 68 persen <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=banjir-rob">Peringatan banjir rob di pesisir Jakarta Utara <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=timnas">Timnas ke semifinal lewat gol menit ke-89 <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+          </div>
+        </div>
+        <span class="ticker__meta"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-clock" /></svg>11 Nov 2026</span>
+        <button class="ticker__toggle" type="button" data-ticker-toggle aria-pressed="false" aria-label="Jeda berita berjalan">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-pause" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <article aria-labelledby="article-title">
+      <!-- ======================= JUDUL ARTIKEL ======================= -->
+      <header class="shell article-hero">
+        <nav class="breadcrumbs" aria-label="Remah roti">
+          <a href="index.html">Beranda</a>
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right" /></svg>
+          <a href="index.html#terbaru" data-a-cat>Rubrik</a>
+          <svg class="icon" aria-hidden="true"><use href="#i-chevron-right" /></svg>
+          <span aria-current="page">Artikel</span>
+        </nav>
+
+        <div class="article-kicker">
+          <a class="chip chip--cat chip--sm" href="index.html#terbaru" data-cat="internasional" data-a-cat>Internasional</a>
+          <span class="chip chip--sm">
+            <svg class="icon icon--xs" aria-hidden="true"><use href="#i-bolt" /></svg>
+            Laporan mendalam
+          </span>
+        </div>
+
+        <h1 class="article-title" id="article-title" data-a-title>Memuat artikel&hellip;</h1>
+        <p class="article-deck" data-a-deck></p>
+
+        <div class="article-byline">
+          <div class="byline">
+            <span class="avatar" data-a-avatar aria-hidden="true">RN</span>
+            <span class="byline__text">
+              <span class="byline__name" data-a-author>Redawn News</span>
+              <span class="byline__role" data-a-role>Redaksi</span>
+            </span>
+          </div>
+
+          <div class="meta">
+            <span class="meta__item"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg><time data-a-time datetime="">Hari ini</time></span>
+            <span class="meta__dot" aria-hidden="true"></span>
+            <span class="meta__item" data-a-read>5 menit baca</span>
+            <span class="meta__dot" aria-hidden="true"></span>
+            <span class="meta__item"><svg class="icon" aria-hidden="true"><use href="#i-eye" /></svg><span data-a-views>0 pembaca</span></span>
+          </div>
+
+          <div class="article-toolbar">
+            <button class="icon-btn icon-btn--sm tip" type="button" data-a-save data-save="putin-trump" data-tip="Simpan" aria-label="Simpan artikel" aria-pressed="false">
+              <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+            </button>
+            <button class="icon-btn icon-btn--sm tip" type="button" data-share="putin-trump" data-tip="Bagikan" aria-label="Bagikan artikel">
+              <svg class="icon" aria-hidden="true"><use href="#i-share" /></svg>
+            </button>
+            <button class="icon-btn icon-btn--sm tip" type="button" data-copy-link data-tip="Salin tautan" aria-label="Salin tautan artikel">
+              <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ======================= GAMBAR UTAMA ======================= -->
+      <figure class="shell article-figure" data-reveal>
+        <div class="article-figure__media">
+          <img data-a-cover src="assets/img/covers/putin-trump.svg" alt="" width="1600" height="840" />
+        </div>
+        <figcaption>
+          <span data-a-caption>Ilustrasi pertemuan tingkat tinggi.</span>
+          <span class="article-figure__credit">Ilustrasi: Redawn Visual Desk</span>
+        </figcaption>
+      </figure>
+
+      <!-- ======================= ISI ARTIKEL ======================= -->
+      <div class="shell article-layout">
+        <aside class="article-rail article-rail--left" data-toc-wrap aria-label="Daftar isi artikel">
+          <div>
+            <p class="rail-label">Dalam artikel</p>
+            <nav class="toc" data-a-toc aria-label="Daftar isi"></nav>
+          </div>
+        </aside>
+
+        <div class="article-main">
+          <details class="toc-mobile" data-toc-wrap>
+            <summary>
+              Daftar isi
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-chevron-down" /></svg>
+            </summary>
+            <nav class="toc" data-a-toc aria-label="Daftar isi artikel"></nav>
+          </details>
+
+          <div class="article-prose" data-a-body></div>
+
+          <div class="article-tags" data-a-tags aria-label="Tag artikel"></div>
+
+          <div class="article-end-actions">
+            <div class="article-end-actions__left">
+              <button class="icon-btn tip" type="button" data-share="putin-trump" data-tip="Bagikan" aria-label="Bagikan artikel">
+                <svg class="icon" aria-hidden="true"><use href="#i-share" /></svg>
+              </button>
+              <button class="icon-btn tip" type="button" data-copy-link data-tip="Salin tautan" aria-label="Salin tautan artikel">
+                <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg>
+              </button>
+              <button class="icon-btn tip" type="button" data-a-save data-save="putin-trump" data-tip="Simpan" aria-label="Simpan artikel" aria-pressed="false">
+                <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+              </button>
+            </div>
+            <a class="btn btn--text btn--sm" href="index.html#terbaru">
+              Kembali ke beranda
+              <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+            </a>
+          </div>
+
+          <aside class="author-card" aria-label="Tentang penulis">
+            <span class="avatar-lg" data-a-avatar aria-hidden="true">RN</span>
+            <div>
+              <p class="author-card__name" data-a-author>Redawn News</p>
+              <p class="author-card__role" data-a-role>Redaksi</p>
+              <p class="author-card__bio">Menulis tentang diplomasi, keamanan, dan kebijakan luar negeri dengan pendekatan yang membumi.</p>
+            </div>
+            <button class="btn btn--tonal btn--sm" type="button" data-action="subscribe">Ikuti</button>
+          </aside>
+        </div>
+
+        <aside class="article-rail article-rail--right" aria-label="Bagikan artikel dan newsletter">
+          <div>
+            <p class="rail-label">Bagikan</p>
+            <div class="share-stack">
+              <a class="icon-btn tip" href="#" data-share-network="x" data-tip="Bagikan ke X" aria-label="Bagikan artikel ke X" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-x-social" /></svg>
+              </a>
+              <a class="icon-btn tip" href="#" data-share-network="facebook" data-tip="Bagikan ke Facebook" aria-label="Bagikan artikel ke Facebook" target="_blank" rel="noopener">
+                <svg class="icon" aria-hidden="true"><use href="#i-facebook" /></svg>
+              </a>
+              <a class="icon-btn tip" href="#" data-share-network="mail" data-tip="Kirim lewat email" aria-label="Kirim artikel lewat email">
+                <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>
+              </a>
+              <button class="icon-btn tip" type="button" data-copy-link data-tip="Salin tautan" aria-label="Salin tautan artikel">
+                <svg class="icon" aria-hidden="true"><use href="#i-link" /></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="newsletter">
+            <span class="newsletter__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></span>
+            <h2 class="newsletter__title">Fajar Brief</h2>
+            <p class="newsletter__text">Lima berita penting, satu ringkasan. Dikirim setiap pagi sebelum kopi habis.</p>
+            <form class="newsletter__form" data-newsletter novalidate>
+              <label class="sr-only" for="email-article">Alamat email</label>
+              <input class="newsletter__input" id="email-article" type="email" name="email" placeholder="email@kamu.com" autocomplete="email" required />
+              <button class="newsletter__submit" type="submit" aria-label="Berlangganan newsletter">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </button>
+            </form>
+            <p class="newsletter__note">Gratis. Bisa berhenti kapan saja. Tanpa spam.</p>
+            <div class="newsletter__success" role="status">
+              <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+              <span>Kamu terdaftar. Cek inbox untuk konfirmasi.</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- ======================= ARTIKEL TERKAIT ======================= -->
+      <section class="shell related" aria-labelledby="related-title">
+        <div class="section-head">
+          <div class="section-head__text">
+            <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkle" /></svg>Lanjut baca</span>
+            <h2 class="section-title" id="related-title">Cerita terkait</h2>
+            <p class="section-deck">Perspektif lain dari rubrik yang sama, dipilih redaksi.</p>
+          </div>
+          <a class="section-link" href="index.html#terbaru">
+            Semua berita
+            <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+          </a>
+        </div>
+        <div class="related-grid" data-a-related></div>
+      </section>
+    </article>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Redawn. Fajar Baru Informasi — beranda">
+            <span class="brand__mark"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#brand-mark" /></svg></span>
+            <span class="brand__text">
+              <span class="brand__name">Redawn<em>.</em></span>
+              <span class="brand__tag">Fajar Baru Informasi</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Kabar yang menjelaskan, bukan sekadar memberi tahu. Independen, terbuka soal koreksi, dan berpihak pada pembaca.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram Redawn"><svg class="icon" aria-hidden="true"><use href="#i-instagram" /></svg></a>
+            <a href="#" aria-label="X Redawn"><svg class="icon" aria-hidden="true"><use href="#i-x-social" /></svg></a>
+            <a href="#" aria-label="YouTube Redawn"><svg class="icon" aria-hidden="true"><use href="#i-youtube" /></svg></a>
+            <a href="#" aria-label="Facebook Redawn"><svg class="icon" aria-hidden="true"><use href="#i-facebook" /></svg></a>
+            <a href="#" aria-label="RSS Redawn"><svg class="icon" aria-hidden="true"><use href="#i-rss" /></svg></a>
+          </div>
+          <p style="margin-top:18px"><span class="footer-badge"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check" /></svg>Terverifikasi Dewan Pers</span></p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Rubrik</h2>
+          <ul>
+            <li><a href="index.html#nasional">Nasional</a></li>
+            <li><a href="index.html#internasional">Internasional</a></li>
+            <li><a href="index.html#ekonomi">Ekonomi</a></li>
+            <li><a href="index.html#teknologi">Teknologi</a></li>
+            <li><a href="index.html#olahraga">Olahraga</a></li>
+            <li><a href="index.html#opini">Opini</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Redawn</h2>
+          <ul>
+            <li><a href="#">Tentang kami</a></li>
+            <li><a href="#">Redaksi</a></li>
+            <li><a href="#">Pedoman media siber</a></li>
+            <li><a href="#">Kebijakan koreksi</a></li>
+            <li><a href="#">Karier</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Bantuan</h2>
+          <ul>
+            <li><a href="#">Pusat bantuan</a></li>
+            <li><a href="#">Cara berlangganan</a></li>
+            <li><a href="#">Kebijakan privasi</a></li>
+            <li><a href="#">Syarat penggunaan</a></li>
+            <li><a href="#">Aksesibilitas</a></li>
+            <li><a href="index.html#terbaru">Kembali ke beranda</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="site-footer__legal">
+          <span>&copy; 2026 Redawn News. Purwarupa desain.</span>
+          <a href="#">Privasi</a>
+          <a href="#">Ketentuan</a>
+          <a href="#">Cookie</a>
+          <span>Konten berita bersifat fiktif.</span>
+        </div>
+        <button class="footer-theme" type="button" data-theme-toggle aria-label="Ganti tema: aktifkan mode gelap">
+          <svg class="icon icon--sm icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+          <svg class="icon icon--sm icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          Ganti tema
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================= BOTTOM NAV (mobile) ======================= -->
+  <nav class="bottom-nav" aria-label="Navigasi cepat">
+    <a class="bottom-nav__item" href="index.html">
+      <svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>
+      Beranda
+    </a>
+    <button class="bottom-nav__item" type="button" data-search-open>
+      <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+      Cari
+    </button>
+    <button class="bottom-nav__item" type="button" data-bookmarks-open>
+      <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+      Tersimpan
+      <span class="bottom-nav__badge icon-btn__badge" data-saved-count aria-hidden="true">0</span>
+    </button>
+    <button class="bottom-nav__item" type="button" data-action="login">
+      <svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>
+      Akun
+    </button>
+  </nav>
+
+  <button class="fab-top" id="fab-top" type="button" aria-label="Kembali ke atas">
+    <svg class="fab-top__ring" viewBox="0 0 52 52" aria-hidden="true">
+      <circle class="track" cx="26" cy="26" r="23" />
+      <circle class="bar" cx="26" cy="26" r="23" />
+    </svg>
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+  </button>
+
+  <!-- ======================= DIALOG: PENCARIAN ======================= -->
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+    <div class="dialog-surface">
+      <div class="search-bar">
+        <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+        <label class="sr-only" for="search-input" id="search-title">Cari berita di Redawn</label>
+        <input id="search-input" type="search" placeholder="Cari berita, topik, atau penulis&hellip;" autocomplete="off" spellcheck="false" />
+        <button class="icon-btn icon-btn--sm" type="button" data-search-close aria-label="Tutup pencarian">
+          <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="search-dialog__body">
+        <div id="search-default">
+          <div class="search-group">
+            <p class="search-group__title">Topik hangat</p>
+            <div class="search-chips">
+              <button class="chip" type="button" data-topic="Pemilu 2029">Pemilu 2029</button>
+              <button class="chip" type="button" data-topic="Transisi energi">Transisi energi</button>
+              <button class="chip" type="button" data-topic="Kecerdasan buatan">Kecerdasan buatan</button>
+              <button class="chip" type="button" data-topic="Ekonomi digital">Ekonomi digital</button>
+              <button class="chip" type="button" data-topic="Transportasi publik">Transportasi publik</button>
+              <button class="chip" type="button" data-topic="Perubahan iklim">Perubahan iklim</button>
+            </div>
+          </div>
+          <div class="search-group" id="search-recent-block" hidden>
+            <p class="search-group__title">Terakhir dicari <button type="button" data-clear-recent>Hapus</button></p>
+            <div class="search-recent" id="search-recent-list"></div>
+          </div>
+        </div>
+        <div class="search-results" id="search-results" hidden></div>
+        <div class="search-empty" id="search-empty" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+          <strong>Belum ada yang cocok</strong>
+          <span>Coba kata kunci yang lebih singkat, atau jelajahi topik di atas.</span>
+        </div>
+      </div>
+      <div class="search-footer">
+        <span id="search-count"></span>
+        <span><kbd>Enter</kbd> buka &middot; <kbd>Esc</kbd> tutup</span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================= DIALOG: TERSIMPAN ======================= -->
+  <dialog class="sheet-dialog" id="bookmarks-dialog" aria-labelledby="bookmarks-title">
+    <div class="dialog-surface">
+      <div class="sheet-header">
+        <div class="sheet-header__title">
+          <h2 id="bookmarks-title">Tersimpan</h2>
+          <p>Daftar baca pribadi, tersimpan di perangkat ini.</p>
+        </div>
+        <button class="icon-btn" type="button" data-close-dialog aria-label="Tutup daftar tersimpan">
+          <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="sheet-body" id="bookmarks-body"></div>
+    </div>
+  </dialog>
+
+  <!-- ======================= DIALOG: MENU ======================= -->
+  <dialog class="sheet-dialog sheet-dialog--left" id="menu-dialog" aria-labelledby="menu-title">
+    <div class="dialog-surface">
+      <div class="sheet-header">
+        <div class="sheet-header__title">
+          <h2 id="menu-title">Menu</h2>
+          <p>Redawn News &middot; Fajar Baru Informasi</p>
+        </div>
+        <button class="icon-btn" type="button" data-close-dialog aria-label="Tutup menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="sheet-body">
+        <div class="menu-profile">
+          <span class="avatar" aria-hidden="true">AR</span>
+          <span class="stack">
+            <span class="menu-profile__name">Aldi Ramadhan</span>
+            <span class="menu-profile__mail">aldi@contoh.id &middot; Akun demo</span>
+          </span>
+        </div>
+
+        <div class="menu-links">
+          <a class="menu-link" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>Beranda</a>
+          <a class="menu-link" href="index.html#nasional"><svg class="icon" aria-hidden="true"><use href="#i-globe" /></svg>Nasional</a>
+          <a class="menu-link" href="index.html#internasional"><svg class="icon" aria-hidden="true"><use href="#i-globe" /></svg>Internasional</a>
+          <a class="menu-link" href="index.html#ekonomi"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>Ekonomi</a>
+          <a class="menu-link" href="index.html#teknologi"><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg>Teknologi</a>
+          <a class="menu-link" href="index.html#hukum"><svg class="icon" aria-hidden="true"><use href="#i-info" /></svg>Hukum</a>
+          <a class="menu-link" href="index.html#politik"><svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>Politik</a>
+          <a class="menu-link" href="index.html#olahraga"><svg class="icon" aria-hidden="true"><use href="#i-fire" /></svg>Olahraga</a>
+          <a class="menu-link" href="index.html#video"><svg class="icon" aria-hidden="true"><use href="#i-video" /></svg>Video</a>
+          <a class="menu-link" href="index.html#opini"><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg>Opini</a>
+          <a class="menu-link" href="index.html#infografis"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>Infografis</a>
+          <a class="menu-link" href="index.html#foto"><svg class="icon" aria-hidden="true"><use href="#i-camera" /></svg>Foto</a>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-links">
+          <button class="menu-link" type="button" data-action="notifications">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell" /></svg>Notifikasi
+            <span class="menu-link__meta">Baru</span>
+          </button>
+          <button class="menu-link" type="button" data-theme-toggle>
+            <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+            Ganti tema
+          </button>
+          <button class="menu-link" type="button" data-action="subscribe">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>Langganan newsletter
+          </button>
+        </div>
+
+        <p style="margin-top:20px;font-size:11px;line-height:1.6;color:var(--md-on-surface-variant)">
+          Purwarupa desain Redawn News. Seluruh berita, nama, dan angka bersifat fiktif.
+        </p>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast-region" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/article.js"></script>
+</body>
+</html>

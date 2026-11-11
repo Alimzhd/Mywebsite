@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" gradientTransform="rotate(154 .5 .5)">
+    <stop offset="0" stop-color="#111633"/>
+    <stop offset=".55" stop-color="#262f6b"/>
+    <stop offset="1" stop-color="#111633"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".18" r=".8">
+    <stop offset="0" stop-color="#3c6fd1" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#3c6fd1" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx=".16" cy=".9" r=".7">
+    <stop offset="0" stop-color="#9fc2f2" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#9fc2f2" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="shade" x1="0" y1=".45" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="70"/>
+  </filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#glow)"/>
+<rect width="1200" height="800" fill="url(#glow2)"/>
+<g filter="url(#soft)" opacity=".55">
+  <ellipse cx="459.0767308603972" cy="297.503863023594" rx="231.8503539264202" ry="126.10518769361079" fill="#3c6fd1"/>
+  <ellipse cx="951.7477284744382" cy="616.2634851410985" rx="235.3753626346588" ry="194.94524833746254" fill="#9fc2f2"/>
+</g>
+<g class="motif"><rect x="40" y="78" width="34" height="132" rx="17" fill="#9fc2f2" opacity="0.47"/><rect x="132" y="47" width="34" height="163" rx="17" fill="#3c6fd1" opacity="0.28"/><rect x="224" y="172" width="34" height="38" rx="17" fill="#3c6fd1" opacity="0.36"/><rect x="316" y="127" width="34" height="83" rx="17" fill="#3c6fd1" opacity="0.19"/><rect x="408" y="111" width="34" height="99" rx="17" fill="#9fc2f2" opacity="0.18"/><rect x="500" y="156" width="34" height="54" rx="17" fill="#3c6fd1" opacity="0.35"/><rect x="592" y="65" width="34" height="145" rx="17" fill="#3c6fd1" opacity="0.35"/><rect x="684" y="100" width="34" height="110" rx="17" fill="#3c6fd1" opacity="0.38"/><rect x="776" y="35" width="34" height="175" rx="17" fill="#9fc2f2" opacity="0.20"/><rect x="868" y="115" width="34" height="95" rx="17" fill="#3c6fd1" opacity="0.37"/><rect x="960" y="77" width="34" height="133" rx="17" fill="#3c6fd1" opacity="0.34"/><rect x="1052" y="73" width="34" height="137" rx="17" fill="#3c6fd1" opacity="0.49"/><rect x="1144" y="94" width="34" height="116" rx="17" fill="#9fc2f2" opacity="0.33"/><rect x="40" y="147" width="34" height="179" rx="17" fill="#3c6fd1" opacity="0.38"/><rect x="132" y="157" width="34" height="169" rx="17" fill="#3c6fd1" opacity="0.26"/><rect x="224" y="241" width="34" height="85" rx="17" fill="#3c6fd1" opacity="0.17"/><rect x="316" y="269" width="34" height="57" rx="17" fill="#9fc2f2" opacity="0.48"/><rect x="408" y="279" width="34" height="47" rx="17" fill="#3c6fd1" opacity="0.44"/><rect x="500" y="274" width="34" height="52" rx="17" fill="#3c6fd1" opacity="0.41"/><rect x="592" y="154" width="34" height="172" rx="17" fill="#3c6fd1" opacity="0.32"/><rect x="684" y="268" width="34" height="58" rx="17" fill="#9fc2f2" opacity="0.30"/><rect x="776" y="205" width="34" height="121" rx="17" fill="#3c6fd1" opacity="0.40"/><rect x="868" y="194" width="34" height="132" rx="17" fill="#3c6fd1" opacity="0.28"/><rect x="960" y="173" width="34" height="153" rx="17" fill="#3c6fd1" opacity="0.34"/><rect x="1052" y="234" width="34" height="92" rx="17" fill="#9fc2f2" opacity="0.41"/><rect x="1144" y="175" width="34" height="151" rx="17" fill="#3c6fd1" opacity="0.44"/></g>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect width="1200" height="800" filter="url(#grain)" opacity=".16" style="mix-blend-mode:overlay"/>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" gradientTransform="rotate(102 .5 .5)">
+    <stop offset="0" stop-color="#1b2433"/>
+    <stop offset=".55" stop-color="#334a66"/>
+    <stop offset="1" stop-color="#1b2433"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".18" r=".8">
+    <stop offset="0" stop-color="#7d8fa6" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#7d8fa6" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx=".16" cy=".9" r=".7">
+    <stop offset="0" stop-color="#e2d4b8" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#e2d4b8" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="shade" x1="0" y1=".45" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="70"/>
+  </filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#glow)"/>
+<rect width="1200" height="800" fill="url(#glow2)"/>
+<g filter="url(#soft)" opacity=".55">
+  <ellipse cx="362.1617455268279" cy="153.52895667776465" rx="207.06212062388659" ry="130.57676285505295" fill="#7d8fa6"/>
+  <ellipse cx="1049.0389274992049" cy="638.3012849837542" rx="304.1584590449929" ry="182.60955687612295" fill="#e2d4b8"/>
+</g>
+<g class="motif"><g fill="none" stroke="#7d8fa6" stroke-linecap="round"><circle cx="880" cy="440" r="120" stroke-width="3" opacity="0.55"/><circle cx="868" cy="448" r="198" stroke-width="1.5" opacity="0.49000000000000005"/><circle cx="856" cy="456" r="276" stroke-width="1.5" opacity="0.43000000000000005"/><circle cx="844" cy="464" r="354" stroke-width="1.5" opacity="0.37000000000000005"/><circle cx="832" cy="472" r="432" stroke-width="1.5" opacity="0.31000000000000005"/><circle cx="820" cy="480" r="510" stroke-width="1.5" opacity="0.25000000000000006"/><circle cx="808" cy="488" r="588" stroke-width="1.5" opacity="0.19000000000000006"/><circle cx="808" cy="536" r="52" fill="#e2d4b8" opacity=".85"/></g></g>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect width="1200" height="800" filter="url(#grain)" opacity=".16" style="mix-blend-mode:overlay"/>
+</svg>

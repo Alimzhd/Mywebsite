@@ -1,0 +1,28 @@
+{
+  "name": "Redawn News — Fajar Baru Informasi",
+  "short_name": "Redawn",
+  "description": "Kabar terkini, analisis mendalam, dan cerita yang menjelaskan. Purwarupa desain dengan konten fiktif.",
+  "lang": "id",
+  "dir": "ltr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fdfaf8",
+  "theme_color": "#b3261e",
+  "categories": ["news", "magazines"],
+  "icons": [
+    {
+      "src": "assets/img/brand/mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/img/brand/mark.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

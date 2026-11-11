@@ -1,0 +1,372 @@
+/* ==========================================================================
+   REDAWN — Material 3 Expressive design tokens
+   Palet tonal dibangun dengan OKLCH agar konsisten di light & dark.
+   ========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* ---- Palet tonal: Primary (merah fajar) ---------------------------- */
+  --p-10: oklch(0.26 0.10 24);
+  --p-20: oklch(0.35 0.15 24);
+  --p-30: oklch(0.44 0.19 25);
+  --p-40: oklch(0.53 0.22 26);
+  --p-50: oklch(0.61 0.21 28);
+  --p-60: oklch(0.68 0.19 30);
+  --p-70: oklch(0.77 0.15 32);
+  --p-80: oklch(0.85 0.10 34);
+  --p-90: oklch(0.93 0.05 35);
+  --p-95: oklch(0.965 0.025 36);
+  --p-99: oklch(0.99 0.008 40);
+
+  /* ---- Palet tonal: Secondary (ochre) -------------------------------- */
+  --s-10: oklch(0.26 0.06 58);
+  --s-20: oklch(0.34 0.08 58);
+  --s-30: oklch(0.45 0.10 58);
+  --s-40: oklch(0.56 0.11 60);
+  --s-50: oklch(0.64 0.12 62);
+  --s-80: oklch(0.86 0.08 66);
+  --s-90: oklch(0.93 0.05 66);
+  --s-95: oklch(0.965 0.028 68);
+
+  /* ---- Palet tonal: Tertiary (teal) ---------------------------------- */
+  --t-10: oklch(0.24 0.04 200);
+  --t-20: oklch(0.32 0.06 200);
+  --t-30: oklch(0.42 0.08 200);
+  --t-40: oklch(0.52 0.09 200);
+  --t-50: oklch(0.60 0.10 200);
+  --t-70: oklch(0.78 0.08 200);
+  --t-80: oklch(0.86 0.06 200);
+  --t-90: oklch(0.93 0.045 200);
+  --t-95: oklch(0.965 0.025 200);
+
+  /* ---- Palet tonal: Neutral hangat ----------------------------------- */
+  --n-0: oklch(0 0 0);
+  --n-6: oklch(0.145 0.008 42);
+  --n-10: oklch(0.19 0.009 42);
+  --n-12: oklch(0.215 0.010 42);
+  --n-17: oklch(0.26 0.011 42);
+  --n-20: oklch(0.30 0.012 42);
+  --n-22: oklch(0.32 0.012 42);
+  --n-24: oklch(0.34 0.012 42);
+  --n-30: oklch(0.38 0.012 45);
+  --n-40: oklch(0.46 0.012 45);
+  --n-50: oklch(0.55 0.012 45);
+  --n-60: oklch(0.63 0.012 45);
+  --n-70: oklch(0.72 0.012 45);
+  --n-80: oklch(0.80 0.011 45);
+  --n-85: oklch(0.855 0.011 45);
+  --n-88: oklch(0.88 0.010 45);
+  --n-90: oklch(0.902 0.011 45);
+  --n-92: oklch(0.922 0.010 45);
+  --n-94: oklch(0.942 0.009 45);
+  --n-95: oklch(0.952 0.009 45);
+  --n-96: oklch(0.962 0.008 45);
+  --n-98: oklch(0.982 0.006 45);
+  --n-100: oklch(1 0 0);
+
+  /* ---- Peran warna: Light -------------------------------------------- */
+  --md-primary: var(--p-40);
+  --md-on-primary: var(--n-100);
+  --md-primary-container: var(--p-90);
+  --md-on-primary-container: var(--p-10);
+  --md-primary-hover: var(--p-30);
+
+  --md-secondary: var(--s-40);
+  --md-on-secondary: var(--n-100);
+  --md-secondary-container: var(--s-90);
+  --md-on-secondary-container: var(--s-10);
+
+  --md-tertiary: var(--t-40);
+  --md-on-tertiary: var(--n-100);
+  --md-tertiary-container: var(--t-90);
+  --md-on-tertiary-container: var(--t-10);
+
+  --md-error: oklch(0.50 0.20 25);
+  --md-on-error: var(--n-100);
+  --md-error-container: oklch(0.92 0.06 25);
+  --md-on-error-container: oklch(0.26 0.12 25);
+  --md-success: oklch(0.45 0.11 150);
+
+  --md-surface: var(--n-98);
+  --md-surface-dim: var(--n-90);
+  --md-surface-bright: var(--n-98);
+  --md-on-surface: var(--n-10);
+  --md-on-surface-variant: var(--n-30);
+  --md-surface-variant: var(--n-92);
+  --md-surface-container-lowest: var(--n-100);
+  --md-surface-container-low: var(--n-96);
+  --md-surface-container: var(--n-94);
+  --md-surface-container-high: var(--n-92);
+  --md-surface-container-highest: var(--n-90);
+  --md-inverse-surface: var(--n-20);
+  --md-inverse-on-surface: var(--n-95);
+  --md-inverse-primary: var(--p-80);
+  --md-outline: var(--n-50);
+  --md-outline-variant: var(--n-88);
+  --md-scrim: rgb(12 9 8 / 0.52);
+  --md-shadow: 0 0 0;
+
+  /* ---- Warna ekspresif (bukan peran M3, untuk aksen brand) ----------- */
+  --brand-gradient: linear-gradient(
+    112deg,
+    oklch(0.56 0.22 22) 0%,
+    oklch(0.64 0.20 42) 46%,
+    oklch(0.79 0.15 76) 100%
+  );
+  --aurora-gradient: linear-gradient(
+    118deg,
+    oklch(0.42 0.09 205) 0%,
+    oklch(0.50 0.13 235) 52%,
+    oklch(0.44 0.16 290) 100%
+  );
+  --ink-gradient: linear-gradient(160deg, oklch(0.24 0.02 42), oklch(0.15 0.01 42));
+  --tint-primary: color-mix(in oklab, var(--md-primary) 10%, transparent);
+  --tint-primary-strong: color-mix(in oklab, var(--md-primary) 22%, transparent);
+  --tint-tertiary: color-mix(in oklab, var(--md-tertiary) 12%, transparent);
+
+  /* ---- Elevasi ------------------------------------------------------- */
+  --elev-0: none;
+  --elev-1: 0 1px 2px rgb(28 20 16 / 0.10), 0 1px 3px 1px rgb(28 20 16 / 0.06);
+  --elev-2: 0 1px 2px rgb(28 20 16 / 0.10), 0 2px 6px 2px rgb(28 20 16 / 0.07);
+  --elev-3: 0 2px 4px rgb(28 20 16 / 0.10), 0 6px 14px 4px rgb(28 20 16 / 0.08);
+  --elev-4: 0 4px 8px rgb(28 20 16 / 0.10), 0 10px 22px 6px rgb(28 20 16 / 0.09);
+  --elev-5: 0 8px 16px rgb(28 20 16 / 0.12), 0 20px 44px 10px rgb(28 20 16 / 0.12);
+
+  /* ---- Tipografi ----------------------------------------------------- */
+  --font-sans: "Roboto Flex", "Roboto", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-display: "Roboto Flex", "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", "Cascadia Mono", Menlo, Consolas, monospace;
+
+  --text-display-l: clamp(3rem, 1.4rem + 5.4vw, 5rem);
+  --text-display-m: clamp(2.5rem, 1.4rem + 3.9vw, 3.75rem);
+  --text-display-s: clamp(2.05rem, 1.35rem + 2.4vw, 3rem);
+  --text-headline-l: clamp(1.85rem, 1.4rem + 1.6vw, 2.4rem);
+  --text-headline-m: clamp(1.6rem, 1.35rem + 0.9vw, 1.95rem);
+  --text-headline-s: 1.375rem;
+  --text-title-l: 1.25rem;
+  --text-title-m: 1.0625rem;
+  --text-title-s: 0.9375rem;
+  --text-body-l: 1.0625rem;
+  --text-body-m: 0.9375rem;
+  --text-body-s: 0.8125rem;
+  --text-label-l: 0.9375rem;
+  --text-label-m: 0.8125rem;
+  --text-label-s: 0.6875rem;
+
+  --leading-tight: 1.06;
+  --leading-snug: 1.22;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  --tracking-display: -0.035em;
+  --tracking-headline: -0.022em;
+  --tracking-title: -0.012em;
+  --tracking-body: 0em;
+  --tracking-label: 0.02em;
+  --tracking-overline: 0.14em;
+
+  /* ---- Shape --------------------------------------------------------- */
+  --shape-xs: 4px;
+  --shape-sm: 8px;
+  --shape-md: 12px;
+  --shape-lg: 16px;
+  --shape-xl: 20px;
+  --shape-2xl: 28px;
+  --shape-3xl: 34px;
+  --shape-4xl: 44px;
+  --shape-5xl: 56px;
+  --shape-full: 999px;
+
+  /* ---- State layer --------------------------------------------------- */
+  --state-hover: 0.08;
+  --state-focus: 0.10;
+  --state-press: 0.14;
+  --state-drag: 0.16;
+
+  /* ---- Motion -------------------------------------------------------- */
+  --dur-short-1: 50ms;
+  --dur-short-2: 100ms;
+  --dur-short-3: 150ms;
+  --dur-short-4: 200ms;
+  --dur-medium-1: 250ms;
+  --dur-medium-2: 300ms;
+  --dur-medium-3: 350ms;
+  --dur-medium-4: 400ms;
+  --dur-long-1: 450ms;
+  --dur-long-2: 500ms;
+  --dur-long-3: 550ms;
+  --dur-long-4: 600ms;
+  --dur-xlong: 800ms;
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-standard-decel: cubic-bezier(0, 0, 0, 1);
+  --ease-standard-accel: cubic-bezier(0.3, 0, 1, 1);
+  --ease-emphasized: cubic-bezier(0.2, 0, 0, 1);
+  --ease-emphasized-decel: cubic-bezier(0.05, 0.7, 0.1, 1);
+  --ease-emphasized-accel: cubic-bezier(0.3, 0, 0.8, 0.15);
+  --ease-spring: linear(0, 0.383 5.8%, 0.745 9.3%, 1.06 13.2%, 1.11 16.4%, 1.11 21.2%, 1.06 25.8%, 1.01 30.9%, 1 100%);
+  --ease-expressive: linear(0, 0.35 7%, 0.83 15%, 1.13 24%, 1.19 31%, 1.09 46%, 1.01 60%, 1 100%);
+
+  /* ---- Layout -------------------------------------------------------- */
+  --page-max: 1440px;
+  --content-max: 1320px;
+  --gutter: clamp(16px, 2.4vw, 32px);
+  --appbar-h: 72px;
+  --catbar-h: 58px;
+  --rail-w: 320px;
+  --radius-card: var(--shape-2xl);
+
+  --z-header: 60;
+  --z-catbar: 55;
+  --z-fab: 80;
+  --z-sheet: 100;
+}
+
+/* ==========================================================================
+   Dark scheme — peran warna tonal
+   ========================================================================== */
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --md-primary: var(--p-80);
+  --md-on-primary: var(--p-20);
+  --md-primary-container: var(--p-30);
+  --md-on-primary-container: var(--p-90);
+  --md-primary-hover: var(--p-70);
+
+  --md-secondary: var(--s-80);
+  --md-on-secondary: var(--s-20);
+  --md-secondary-container: var(--s-30);
+  --md-on-secondary-container: var(--s-90);
+
+  --md-tertiary: var(--t-80);
+  --md-on-tertiary: var(--t-20);
+  --md-tertiary-container: var(--t-30);
+  --md-on-tertiary-container: var(--t-90);
+
+  --md-error: oklch(0.81 0.12 25);
+  --md-on-error: oklch(0.28 0.12 25);
+  --md-error-container: oklch(0.36 0.14 25);
+  --md-on-error-container: oklch(0.92 0.06 25);
+  --md-success: oklch(0.78 0.12 150);
+
+  --md-surface: var(--n-6);
+  --md-surface-dim: var(--n-6);
+  --md-surface-bright: var(--n-24);
+  --md-on-surface: var(--n-92);
+  --md-on-surface-variant: var(--n-80);
+  --md-surface-variant: var(--n-22);
+  --md-surface-container-lowest: var(--n-6);
+  --md-surface-container-low: var(--n-10);
+  --md-surface-container: var(--n-12);
+  --md-surface-container-high: var(--n-17);
+  --md-surface-container-highest: var(--n-22);
+  --md-inverse-surface: var(--n-90);
+  --md-inverse-on-surface: var(--n-10);
+  --md-inverse-primary: var(--p-40);
+  --md-outline: var(--n-60);
+  --md-outline-variant: var(--n-30);
+  --md-scrim: rgb(0 0 0 / 0.66);
+
+  --brand-gradient: linear-gradient(
+    112deg,
+    oklch(0.72 0.20 22) 0%,
+    oklch(0.78 0.17 46) 48%,
+    oklch(0.86 0.13 82) 100%
+  );
+  --ink-gradient: linear-gradient(160deg, oklch(0.24 0.02 42), oklch(0.17 0.01 42));
+  --tint-primary: color-mix(in oklab, var(--md-primary) 16%, transparent);
+  --tint-primary-strong: color-mix(in oklab, var(--md-primary) 28%, transparent);
+  --tint-tertiary: color-mix(in oklab, var(--md-tertiary) 18%, transparent);
+
+  --elev-1: 0 1px 2px rgb(0 0 0 / 0.5), 0 1px 3px 1px rgb(0 0 0 / 0.35);
+  --elev-2: 0 1px 2px rgb(0 0 0 / 0.5), 0 2px 6px 2px rgb(0 0 0 / 0.4);
+  --elev-3: 0 2px 4px rgb(0 0 0 / 0.5), 0 6px 14px 4px rgb(0 0 0 / 0.42);
+  --elev-4: 0 4px 8px rgb(0 0 0 / 0.5), 0 10px 22px 6px rgb(0 0 0 / 0.45);
+  --elev-5: 0 8px 16px rgb(0 0 0 / 0.55), 0 20px 44px 10px rgb(0 0 0 / 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+
+    --md-primary: var(--p-80);
+    --md-on-primary: var(--p-20);
+    --md-primary-container: var(--p-30);
+    --md-on-primary-container: var(--p-90);
+    --md-primary-hover: var(--p-70);
+
+    --md-secondary: var(--s-80);
+    --md-on-secondary: var(--s-20);
+    --md-secondary-container: var(--s-30);
+    --md-on-secondary-container: var(--s-90);
+
+    --md-tertiary: var(--t-80);
+    --md-on-tertiary: var(--t-20);
+    --md-tertiary-container: var(--t-30);
+    --md-on-tertiary-container: var(--t-90);
+
+    --md-error: oklch(0.81 0.12 25);
+    --md-on-error: oklch(0.28 0.12 25);
+    --md-error-container: oklch(0.36 0.14 25);
+    --md-on-error-container: oklch(0.92 0.06 25);
+    --md-success: oklch(0.78 0.12 150);
+
+    --md-surface: var(--n-6);
+    --md-surface-dim: var(--n-6);
+    --md-surface-bright: var(--n-24);
+    --md-on-surface: var(--n-92);
+    --md-on-surface-variant: var(--n-80);
+    --md-surface-variant: var(--n-22);
+    --md-surface-container-lowest: var(--n-6);
+    --md-surface-container-low: var(--n-10);
+    --md-surface-container: var(--n-12);
+    --md-surface-container-high: var(--n-17);
+    --md-surface-container-highest: var(--n-22);
+    --md-inverse-surface: var(--n-90);
+    --md-inverse-on-surface: var(--n-10);
+    --md-inverse-primary: var(--p-40);
+    --md-outline: var(--n-60);
+    --md-outline-variant: var(--n-30);
+    --md-scrim: rgb(0 0 0 / 0.66);
+
+    --brand-gradient: linear-gradient(
+      112deg,
+      oklch(0.72 0.20 22) 0%,
+      oklch(0.78 0.17 46) 48%,
+      oklch(0.86 0.13 82) 100%
+    );
+    --ink-gradient: linear-gradient(160deg, oklch(0.24 0.02 42), oklch(0.17 0.01 42));
+    --tint-primary: color-mix(in oklab, var(--md-primary) 16%, transparent);
+    --tint-primary-strong: color-mix(in oklab, var(--md-primary) 28%, transparent);
+    --tint-tertiary: color-mix(in oklab, var(--md-tertiary) 18%, transparent);
+
+    --elev-1: 0 1px 2px rgb(0 0 0 / 0.5), 0 1px 3px 1px rgb(0 0 0 / 0.35);
+    --elev-2: 0 1px 2px rgb(0 0 0 / 0.5), 0 2px 6px 2px rgb(0 0 0 / 0.4);
+    --elev-3: 0 2px 4px rgb(0 0 0 / 0.5), 0 6px 14px 4px rgb(0 0 0 / 0.42);
+    --elev-4: 0 4px 8px rgb(0 0 0 / 0.5), 0 10px 22px 6px rgb(0 0 0 / 0.45);
+    --elev-5: 0 8px 16px rgb(0 0 0 / 0.55), 0 20px 44px 10px rgb(0 0 0 / 0.5);
+  }
+}
+
+/* Reduced motion: matikan durasi, bukan seluruh transisi */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-short-1: 1ms;
+    --dur-short-2: 1ms;
+    --dur-short-3: 1ms;
+    --dur-short-4: 1ms;
+    --dur-medium-1: 1ms;
+    --dur-medium-2: 1ms;
+    --dur-medium-3: 1ms;
+    --dur-medium-4: 1ms;
+    --dur-long-1: 1ms;
+    --dur-long-2: 1ms;
+    --dur-long-3: 1ms;
+    --dur-long-4: 1ms;
+    --dur-xlong: 1ms;
+  }
+}

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" gradientTransform="rotate(130 .5 .5)">
+    <stop offset="0" stop-color="#1e2530"/>
+    <stop offset=".55" stop-color="#3a4453"/>
+    <stop offset="1" stop-color="#1e2530"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".18" r=".8">
+    <stop offset="0" stop-color="#a62b34" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#a62b34" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx=".16" cy=".9" r=".7">
+    <stop offset="0" stop-color="#e2b8b0" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#e2b8b0" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="shade" x1="0" y1=".45" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="70"/>
+  </filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#glow)"/>
+<rect width="1200" height="800" fill="url(#glow2)"/>
+<g filter="url(#soft)" opacity=".55">
+  <ellipse cx="265.2467601932585" cy="209.5540503319353" rx="182.27388732135296" ry="135.0483380164951" fill="#a62b34"/>
+  <ellipse cx="906.3301265239716" cy="660.3390848264098" rx="372.94155545532703" ry="170.27386541478336" fill="#e2b8b0"/>
+</g>
+<g class="motif"><path d="M 150.4718274064362 211.34546427056193 q 193.73243019916117 -121.4211795758456 275.0483380164951 61.58253163099289 q -80 230.1695424132049 -220 140 z" fill="#a62b34" opacity="0.23"/><path d="M 390.1825769431889 239.5519465394318 q 152.2748846653849 -187.2715054359287 291.4310438092798 73.26239909976721 q -80 218.70082451030612 -220 140 z" fill="#e2b8b0" opacity="0.15"/><path d="M 630.022077281028 209.62611531838775 q 188.21396798826754 -139.4948564749211 379.4968584086746 48.285427913069725 q -80 201.4147743396461 -220 140 z" fill="#a62b34" opacity="0.11"/><path d="M 934.4228540547192 277.66206393018365 q 187.46055358089507 -175.23116341792047 351.07401362620294 80.42965609580278 q -80 189.96925933286548 -220 140 z" fill="#e2b8b0" opacity="0.14"/></g>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect width="1200" height="800" filter="url(#grain)" opacity=".16" style="mix-blend-mode:overlay"/>
+</svg>

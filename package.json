@@ -1,0 +1,21 @@
+{
+  "name": "redawn-news",
+  "version": "1.0.0",
+  "description": "Portal berita Material 3 Expressive (Redawn News)",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "news",
+    "material3",
+    "m3-expressive",
+    "oklch",
+    "static-site"
+  ],
+  "author": "Redawn News Team",
+  "license": "MIT"
+}
+

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800" role="img">
+<defs>
+  <linearGradient id="bg" gradientTransform="rotate(152 .5 .5)">
+    <stop offset="0" stop-color="#0c1b33"/>
+    <stop offset=".55" stop-color="#173a63"/>
+    <stop offset="1" stop-color="#0c1b33"/>
+  </linearGradient>
+  <radialGradient id="glow" cx=".78" cy=".18" r=".8">
+    <stop offset="0" stop-color="#2b7f8f" stop-opacity=".9"/>
+    <stop offset="1" stop-color="#2b7f8f" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx=".16" cy=".9" r=".7">
+    <stop offset="0" stop-color="#9fd6d2" stop-opacity=".55"/>
+    <stop offset="1" stop-color="#9fd6d2" stop-opacity="0"/>
+  </radialGradient>
+  <linearGradient id="shade" x1="0" y1=".45" x2="0" y2="1">
+    <stop offset="0" stop-color="#000" stop-opacity="0"/>
+    <stop offset="1" stop-color="#000" stop-opacity=".34"/>
+  </linearGradient>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+    <feGaussianBlur stdDeviation="70"/>
+  </filter>
+  <filter id="grain">
+    <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+  </filter>
+</defs>
+<rect width="1200" height="800" fill="url(#bg)"/>
+<rect width="1200" height="800" fill="url(#glow)"/>
+<rect width="1200" height="800" fill="url(#glow2)"/>
+<g filter="url(#soft)" opacity=".55">
+  <ellipse cx="476.8881761934608" cy="161.53254148550332" rx="180.6638015806675" ry="234.0727021638304" fill="#2b7f8f"/>
+  <ellipse cx="925.7948130741715" cy="618.5923992469907" rx="291.1274728178978" ry="180.84731523878872" fill="#9fd6d2"/>
+</g>
+<g class="motif"><rect x="-200" y="-200" width="110" height="1300" fill="#2b7f8f" opacity="0.10" transform="rotate(18 600 400)"/><rect x="100" y="-200" width="150" height="1300" fill="#9fd6d2" opacity="0.14" transform="rotate(18 600 400)"/><rect x="400" y="-200" width="190" height="1300" fill="#2b7f8f" opacity="0.17" transform="rotate(18 600 400)"/><rect x="700" y="-200" width="230" height="1300" fill="#9fd6d2" opacity="0.21" transform="rotate(18 600 400)"/><rect x="1000" y="-200" width="270" height="1300" fill="#2b7f8f" opacity="0.24" transform="rotate(18 600 400)"/></g>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect width="1200" height="800" filter="url(#grain)" opacity=".16" style="mix-blend-mode:overlay"/>
+</svg>

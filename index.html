@@ -1,389 +1,1488 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Redawn News - Berita Terkini</title>
-    <link rel="stylesheet" href="hover.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="Gemini_Generated_Image_9gk6ox9gk6ox9gk6.png" type="image/x-icon">
-    <link rel="icon" href="Gemini_Generated_Image_9gk6ox9gk6ox9gk6.png" type="image/x-icon">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Redawn News — Fajar Baru Informasi</title>
+  <meta name="description" content="Redawn News: kabar terkini, analisis mendalam, dan cerita yang menjelaskan. Independen, akurat, dan manusiawi." />
+  <meta name="theme-color" content="#fdfaf8" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141110" media="(prefers-color-scheme: dark)" />
+  <meta name="color-scheme" content="light dark" />
 
-    </style>
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Redawn News" />
+  <meta property="og:title" content="Redawn News — Fajar Baru Informasi" />
+  <meta property="og:description" content="Kabar terkini, analisis mendalam, dan cerita yang menjelaskan." />
+  <meta property="og:image" content="assets/img/covers/putin-trump.svg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/img/brand/mark.svg" />
+  <link rel="alternate icon" href="Gemini_Generated_Image_9gk6ox9gk6ox9gk6.png" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wdth,wght@8..144,75..125,100..900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/pages.css" />
+
+  <script>
+    // Terapkan tema sebelum paint agar tidak ada flash.
+    (() => {
+      try {
+        const stored = JSON.parse(localStorage.getItem("redawn:theme"));
+        if (stored === "light" || stored === "dark") {
+          document.documentElement.dataset.theme = stored;
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Redawn News",
+      "url": "https://redawn.example/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://redawn.example/?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      },
+      "publisher": {
+        "@type": "NewsMediaOrganization",
+        "name": "Redawn News",
+        "logo": "assets/img/brand/mark.svg"
+      }
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Langsung ke konten utama</a>
 
-<div class="top-bar" role="banner" aria-label="Top Bar">
-    <div class="menu-icon">&#9776;</div>
-    <a href="#" class="logo" aria-label="Redawn News">
-        <h1>Redawn News</h1>
-    </a>
-    <form role="search" aria-label="Cari berita di Redawn News">
-        <input type="search" name="q" placeholder="Cari berita, artikel, topik..." aria-label="Kolom pencarian berita" />
-        <button type="submit" aria-label="Cari">
-            <svg fill="#555" height="18" width="18" viewBox="0 0 24 24">
-                <path d="M10 18c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm7.707 1.293-4.387-4.387a6.966 6.966 0 0 0 1.414-4.243c0-3.866-3.134-7-7-7s-7 3.134-7 7 3.134 7 7 7a6.966 6.966 0 0 0 4.243-1.414l4.387 4.387a1 1 0 0 0 1.414-1.414z"/>
-            </svg>
+  <!-- Icon sprite: stroke-based, tanpa dependensi font ikon -->
+  <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="brand-mark" viewBox="0 0 48 48">
+      <path d="M24 9.5a14.5 14.5 0 0 0-14.5 14.5v12h29V24A14.5 14.5 0 0 0 24 9.5Z" />
+      <path d="M15.5 36a8.5 8.5 0 0 1 17 0Z" fill="currentColor" stroke="none" />
+      <path d="M24 17.5v4.2M18.3 20l2.1 3.6M29.7 20l-2.1 3.6M14.6 24.8l3.9 1.3M33.4 24.8l-3.9 1.3" />
+      <path d="M5 39.6h38" />
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" /></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" /></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="M20 20l-3.8-3.8" /></symbol>
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path d="M6.5 4.75h11a1 1 0 0 1 1 1V20l-6.5-4.3L5.5 20V5.75a1 1 0 0 1 1-1Z" /></symbol>
+    <symbol id="i-bookmark-filled" viewBox="0 0 24 24"><path d="M6.5 4.75h11a1 1 0 0 1 1 1V20l-6.5-4.3L5.5 20V5.75a1 1 0 0 1 1-1Z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V4M8 7.5 12 3.5l4 4" /><path d="M5 13.5V19a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5.5" /></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" /><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4" /></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a8.5 8.5 0 0 0 10.5 10.5Z" /></symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24"><path d="M12 19V5M5.5 11.5 12 5l6.5 6.5" /></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" /></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 18l-6-6 6-6" /></symbol>
+    <symbol id="i-arrow-up-left" viewBox="0 0 24 24"><path d="M17 17 7 7M7 15V7h8" /></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5h3v14H8zM13 5h3v14h-3z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-chevron-down" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6" /></symbol>
+    <symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9 6l6 6-6 6" /></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m3.5 7 8.5 6 8.5-6" /></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" /><path d="M4.5 21a7.5 7.5 0 0 1 15 0" /></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8.5a6 6 0 1 0-12 0c0 6-2.5 6.5-2.5 8.5h17c0-2-2.5-2.5-2.5-8.5Z" /><path d="M10 21h4" /></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7.5V12l3 2" /></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5 9.5 17 19 6.5" /></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" /></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10.5 13.5a3.5 3.5 0 0 0 5 0l3-3a3.5 3.5 0 0 0-5-5L12 7" /><path d="M13.5 10.5a3.5 3.5 0 0 0-5 0l-3 3a3.5 3.5 0 0 0 5 5L12 17" /></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6" /></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M12 11v6M12 7.2v.3" /></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z" /><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z" /></symbol>
+    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13.5 3 6 13.5h5L10.5 21 18 10.5h-5z" /></symbol>
+    <symbol id="i-fire" viewBox="0 0 24 24"><path d="M12 3s5.5 4.2 5.5 9.5a5.5 5.5 0 0 1-11 0c0-2.2 1-3.8 2.2-5 0 2 1 3.2 2.1 3.2 0-3.1 1.2-5.7 1.2-7.7Z" /></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V13M9.3 20V8M14.7 20v-5M20 20V4" /></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13.5" r="3.5" /></symbol>
+    <symbol id="i-video" viewBox="0 0 24 24"><rect x="3" y="6" width="12" height="12" rx="2" /><path d="m15 10 6-3v10l-6-3z" /></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 6 12 6s9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z" /><circle cx="12" cy="12" r="3" /></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" /><path d="M3.5 9h17M3.5 15h17M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" /></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 12a8 8 0 1 1-2.3-5.6" /><path d="M20 4v5h-5" /></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z" /></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.2 6.8v.01" /></symbol>
+    <symbol id="i-youtube" viewBox="0 0 24 24"><rect x="2.5" y="5.5" width="19" height="13" rx="4" /><path d="m10.5 9.5 5 2.5-5 2.5z" fill="currentColor" stroke="none" /></symbol>
+    <symbol id="i-x-social" viewBox="0 0 24 24"><path d="M4 4l16 16M20 4 4 20" /></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14.5 8.5H17V5h-2.5A4.5 4.5 0 0 0 10 9.5V12H7v3.5h3V21h4v-5.5h3l.5-3.5H14V9.5c0-.6.4-1 1-1Z" /></symbol>
+    <symbol id="i-rss" viewBox="0 0 24 24"><path d="M4 4a16 16 0 0 1 16 16M4 11a9 9 0 0 1 9 9M5 19h.01" /></symbol>
+  </svg>
+
+  <!-- ======================= TOP APP BAR ======================= -->
+  <header class="app-bar" id="app-bar">
+    <div class="app-bar__inner">
+      <button class="icon-btn app-bar__menu" data-menu-open aria-label="Buka menu" aria-haspopup="dialog">
+        <svg class="icon" aria-hidden="true"><use href="#i-menu" /></svg>
+      </button>
+
+      <a class="brand" href="index.html" aria-label="Redawn. Fajar Baru Informasi — beranda">
+        <span class="brand__mark"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#brand-mark" /></svg></span>
+        <span class="brand__text">
+          <span class="brand__name">Redawn<em>.</em></span>
+          <span class="brand__tag">Fajar Baru Informasi</span>
+        </span>
+      </a>
+
+      <button class="search-trigger" type="button" data-search-open aria-haspopup="dialog">
+        <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+        <span>Cari berita, topik, atau penulis&hellip;</span>
+        <kbd aria-hidden="true">Ctrl K</kbd>
+      </button>
+
+      <div class="app-bar__actions">
+        <button class="icon-btn tip" type="button" data-theme-toggle data-tip="Ganti tema" aria-label="Ganti tema: aktifkan mode gelap" aria-pressed="false">
+          <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+          <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
         </button>
-    </form>
-    <div class="user-controls">
-        <a href="login.html" class="login-button" type="button" aria-label="Profil">Login</a>
-        <button class="btn btn-fill" type="button" aria-label="Masuk">Sign Up</button>
+        <button class="icon-btn tip" type="button" data-bookmarks-open aria-haspopup="dialog" data-tip="Tersimpan" aria-label="Buka artikel tersimpan (0)">
+          <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+          <span class="icon-btn__badge" data-saved-count aria-hidden="true">0</span>
+        </button>
+        <button class="btn btn--tonal btn--sm app-bar__subscribe" type="button" data-action="subscribe">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkle" /></svg>
+          Langganan
+        </button>
+        <button class="avatar" type="button" data-action="login" aria-label="Buka akun AR">
+          AR
+          <span class="avatar__status" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
-</div>
+  </header>
 
-<nav class="main-nav" role="navigation" aria-label="Main navigation">
-    <ul>
-        <li><button class="nav-btn active" data-target="home" aria-current="page">Home</button></li>
-        <li><button class="nav-btn" data-target="berita">Berita</button></li>
-        <li><button class="nav-btn" data-target="jabodetabek">Jabodetabek</button></li>
-        <li><button class="nav-btn" data-target="internasional">Internasional</button></li>
-        <li><button class="nav-btn" data-target="hukum">Hukum</button></li>
-        <li><button class="nav-btn" data-target="politik">Politik</button></li>
-        <li><button class="nav-btn" data-target="kolom">Kolom</button></li>
-        <li><button class="nav-btn" data-target="blakblakan">Terbaru</button></li>
-        <li><button class="nav-btn" data-target="prokontra">Pro Kontra</button></li>
-        <li><button class="nav-btn" data-target="infografis">Infografis</button></li>
-        <li><button class="nav-btn" data-target="foto">Foto</button></li>
-        <li><button class="nav-btn" data-target="video">Video</button></li>
-        <li><button class="nav-btn" data-target="indeks">Indeks</button></li>
-    </ul>
-</nav>
+  <!-- ======================= KATEGORI ======================= -->
+  <nav class="category-bar" aria-label="Kategori berita">
+    <div class="category-bar__inner">
+      <div class="category-bar__scroller" id="category-scroller">
+        <span class="nav-blob" id="nav-blob" aria-hidden="true"></span>
+        <a class="chip-nav is-active" href="#terbaru" data-nav data-target="terbaru" aria-current="page">
+          <span class="chip-nav__spark" aria-hidden="true"></span>Terbaru
+        </a>
+        <a class="chip-nav" href="#nasional" data-nav data-target="nasional"><span class="chip-nav__spark" aria-hidden="true"></span>Nasional</a>
+        <a class="chip-nav" href="#internasional" data-nav data-target="internasional"><span class="chip-nav__spark" aria-hidden="true"></span>Internasional</a>
+        <a class="chip-nav" href="#ekonomi" data-nav data-target="ekonomi"><span class="chip-nav__spark" aria-hidden="true"></span>Ekonomi</a>
+        <a class="chip-nav" href="#teknologi" data-nav data-target="teknologi"><span class="chip-nav__spark" aria-hidden="true"></span>Teknologi</a>
+        <a class="chip-nav" href="#hukum" data-nav data-target="hukum"><span class="chip-nav__spark" aria-hidden="true"></span>Hukum</a>
+        <a class="chip-nav" href="#politik" data-nav data-target="politik"><span class="chip-nav__spark" aria-hidden="true"></span>Politik</a>
+        <a class="chip-nav" href="#olahraga" data-nav data-target="olahraga"><span class="chip-nav__spark" aria-hidden="true"></span>Olahraga</a>
+        <a class="chip-nav" href="#video" data-nav data-target="video"><span class="chip-nav__spark" aria-hidden="true"></span>Video</a>
+        <a class="chip-nav" href="#opini" data-nav data-target="opini"><span class="chip-nav__spark" aria-hidden="true"></span>Opini</a>
+        <button class="chip-nav" type="button" data-menu-open aria-haspopup="dialog">
+          <svg class="icon icon--xs" aria-hidden="true"><use href="#i-plus" /></svg>Lainnya
+        </button>
+      </div>
+    </div>
+  </nav>
 
-<div class="info-ticker" aria-live="polite" aria-atomic="true">
-    <a href="#" tabindex="-1">Advertisement</a>
-    <a href="#" tabindex="-1">Terpopuler</a>
-    <a href="#" tabindex="-1">Daerah ▼</a>
-    <a href="#" tabindex="-1">Hoax or Not</a>
-    <a href="#" tabindex="-1">Suara Pembaca</a>
-    <a href="#" tabindex="-1">Sybau Awards 2025*</a>
-    <a href="#" tabindex="-1">Melindungi Tuan buas*</a>
-    <a href="#" tabindex="-1">Adhyaksa Awards 2025*</a>
-</div>
-
-<div class="container" role="main">
-    <aside class="sidebar-left" aria-label="Iklan dan sponsor kiri">
-        <div class="sidebar-ad">
-            <div class="ad-title">DICARI 15 ORANG UNTUK MERASAKAN PENGALAMAN RIDING PREMIUM BARENG NMAX TERBARU!</div>
+  <!-- ======================= TICKER ======================= -->
+  <div class="ticker-wrap">
+    <div class="shell">
+      <div class="ticker" aria-label="Berita terkini">
+        <span class="ticker__label"><span class="live-dot" aria-hidden="true"></span>TERKINI</span>
+        <div class="ticker__viewport">
+          <div class="ticker__track">
+            <a class="ticker__item" href="detail-putin-trump.html?id=putin-trump">Putin dan Trump bertemu tertutup di Helsinki <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=spbu-ledakan">Ledakan SPBU di kawasan industri, 45 orang luka <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=mrt-fase2">MRT Fase 2 capai progres 68 persen <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=banjir-rob">Peringatan banjir rob di pesisir Jakarta Utara <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=timnas">Timnas ke semifinal lewat gol menit ke-89 <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+            <a class="ticker__item" href="detail-putin-trump.html?id=ai-regulasi">Debat regulasi AI memanas di ruang publik <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+            <span class="ticker__sep" aria-hidden="true"></span>
+          </div>
         </div>
-        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a9476b56-e464-44ff-af90-ac2208a461d0.png"
-             alt="Tiga pengendara motor dengan helm lengkap sedang parkir berjajar di jalan kota yang terang."
-             onerror="this.style.display='none';"/>
-        <button class="sidebar-ad button-yellow" tabindex="0" role="button">CARANYA KLIK DI SINI</button>
-        <div class="sidebar-ad small-black">MOTOR DISEDIAKAN PANITIA</div>
-    </aside>
+        <span class="ticker__meta"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-clock" /></svg>11 Nov 2026</span>
+        <button class="ticker__toggle" type="button" data-ticker-toggle aria-pressed="false" aria-label="Jeda berita berjalan">
+          <svg class="icon icon--sm" aria-hidden="true"><use href="#i-pause" /></svg>
+        </button>
+      </div>
+    </div>
+  </div>
 
-    <main class="content-area">
-        <section class="news-section active" id="home" tabindex="0" aria-label="Berita Home">
-        <div class="top-stories" aria-label="Berita utama di home">
-                <article class="story-card" tabindex="0">
-                    <a href="detail-ledakan-lossantos.html"> <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/07501621-fcaa-4c0d-b4b9-017ad9c0e32b.png" alt="Kebakaran besar di sebuah pom bensin di pinggiran kota Roma dengan asap hitam tebal membubung" onerror="this.style.display='none';" />
-                        <div class="story-title">Ledakan Dahsyat Guncang Pom Bensin di Pinggiran Los Santos, 45 Orang Luka-luka</div>
-                    </a>
-                </article>
-
-                <article class="story-card" tabindex="0">
-                    <a href="detail-bsu-belum-cair.html"> <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fa0c68bd-7edd-426a-9f3b-225af5c8667f.png" alt="Gambar uang kertas Rupiah dan dokumen" onerror="this.style.display='none';" />
-                        <div class="story-title">BSU Belum Cair? Ini Arti Notifikasi dan Cara Cek Status Bantuan</div>
-                    </a>
-                </article>
-
-                <article class="story-card" tabindex="0">
-                    <a href="detail-pembunuh-notaris.html">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0d2c50ae-67ed-439c-a941-c186a798de06.png" alt="Tangan seseorang yang diborgol rantai warna perak" onerror="this.style.display='none';" />
-                        <div class="story-title">Pembunuh Notaris Wanita yang Tewas Terikat di Sungai Citarum Ditangkap!</div>
-                    </a>
-                </article>
-                <article class="story-card" tabindex="0">
-                    <a href="detail-indroyono-dubas.html">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1256311e-2146-4255-9169-cfdf60d4b891.png" alt="Menteri dan diplomat sedang berjalan resmi dengan latar belakang gedung pemerintahan" onerror="this.style.display='none';" />
-                        <div class="story-title">Indroyono Soesilo Usai Uji Kelayakan Calon Dubes AS: Doain Dulu, Masih Proses</div>
-                    </a>
-                </article>
-                <article class="story-card" tabindex="0">
-                    <a href="detail-gus-ipul-sekolah.html">
-                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5172c9d7-ae14-4e23-9f0a-a7827b174c7e.png" alt="Sekelompok guru dan murid sedang berpose di halaman sekolah dengan keceriaan" onerror="this.style.display='none';" />
-                        <div class="story-title">Timothy Ronald Ungkap 100 Sekolah Rakyat Dibuka 14 Juli, Tampung 9.700 Siswa</div>
-                    </a>
-                </article>
+  <main id="main">
+    <!-- ======================= HERO ======================= -->
+    <div class="shell">
+      <div class="hero-layout" id="terbaru">
+        <div class="hero">
+          <article class="feature" data-article-id="putin-trump" data-reveal>
+            <a class="feature__media" href="detail-putin-trump.html?id=putin-trump" tabindex="-1" aria-hidden="true">
+              <img
+                src="assets/img/covers/putin-trump.svg"
+                alt="Ilustrasi abstrak pertemuan dua pemimpin dunia"
+                width="1200"
+                height="800"
+                fetchpriority="high"
+                style="view-transition-name: hero-putin-trump"
+              />
+            </a>
+            <span class="feature__scrim" aria-hidden="true"></span>
+            <div class="feature__top">
+              <span class="chip chip--glass"><span class="live-dot" aria-hidden="true"></span>Sorotan utama</span>
+              <div class="feature__actions">
+                <button class="icon-btn icon-btn--glass" type="button" data-save="putin-trump" aria-label="Simpan artikel" aria-pressed="false">
+                  <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                </button>
+                <button class="icon-btn icon-btn--glass" type="button" data-share="putin-trump" aria-label="Bagikan artikel">
+                  <svg class="icon" aria-hidden="true"><use href="#i-share" /></svg>
+                </button>
+              </div>
             </div>
+            <div class="feature__content">
+              <div class="meta meta--on-image">
+                <span class="badge badge--live"><span class="live-dot" aria-hidden="true"></span>LIVE</span>
+                <span>Internasional</span>
+                <span class="meta__dot" aria-hidden="true"></span>
+                <span>Analisis</span>
+              </div>
+              <h1 class="feature__title">
+                <a href="detail-putin-trump.html?id=putin-trump">Putin dan Trump Bahas Masa Depan Hubungan Internasional di Pertemuan Tertutup</a>
+              </h1>
+              <p class="feature__deck">Perundingan maraton di Helsinki membahas gencatan senjata, sanksi energi, dan kerangka dialog keamanan Eropa. Tidak ada pernyataan bersama yang dirilis.</p>
+              <div class="feature__foot">
+                <div class="byline">
+                  <span class="avatar-sm" aria-hidden="true">NP</span>
+                  <span class="byline__text">
+                    <span class="byline__name">Nadia Prameswari</span>
+                    <span class="byline__role">Reporter Internasional</span>
+                  </span>
+                </div>
+                <div class="meta meta--on-image">
+                  <span class="meta__item"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>7 menit baca</span>
+                  <span class="meta__dot" aria-hidden="true"></span>
+                  <time data-time="2026-11-11T17:05:00+07:00">11 Nov 2026</time>
+                </div>
+              </div>
+            </div>
+          </article>
 
-            <div class="main-grid" aria-label="Berita utama dan iklan">
-                <a href="detail-putin-trump.html" class="feature-link"> <div class="feature-news">
-                        <div class="feature-photo" tabindex="0" aria-label="Foto utama berita Putin dan Trump">
-                            <img src="https://akcdn.detik.net.id/community/media/visual/2025/05/20/presiden-as-donald-trump-klaim-vladimir-putin-siap-berunding-1747736714872_169.jpeg?w=650&q=90" alt="Donald trump dan Putin" onerror="this.style.display='none';" />
-                        </div>
-                        <div class="feature-content">
-                            <h2>Putin dan Trump Bahas Masa Depan Hubungan Internasional di Pertemuan Rahasia</h2>
-                            <p>Dalam pertemuan yang belum dikonfirmasi secara resmi, kedua pemimpin dunia ini dilaporkan mendiskusikan berbagai isu krusial yang dapat membentuk lanskap geopolitik global.</p>
-                            </div>
-                    </div>
+          <div class="hero__side">
+            <article class="card card--horizontal" data-article-id="spbu-ledakan" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/spbu-ledakan.svg" alt="" width="1200" height="800" loading="lazy" />
+                <div class="card__actions">
+                  <button class="card__action" type="button" data-save="spbu-ledakan" aria-label="Simpan artikel" aria-pressed="false">
+                    <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="card__body">
+                <span class="meta"><span class="chip chip--cat chip--sm" data-cat="nasional">Nasional</span><span class="meta__dot" aria-hidden="true"></span><time data-time="2026-11-11T16:40:00+07:00">Hari ini</time></span>
+                <h2 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=spbu-ledakan">Ledakan Guncang SPBU di Kawasan Industri, 45 Orang Luka-luka</a></h2>
+              </div>
+            </article>
+
+            <article class="card card--horizontal" data-article-id="sekolah-rakyat" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/sekolah-rakyat.svg" alt="" width="1200" height="800" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <span class="meta"><span class="chip chip--cat chip--sm" data-cat="nasional">Nasional</span><span class="meta__dot" aria-hidden="true"></span><time data-time="2026-11-11T15:20:00+07:00">Hari ini</time></span>
+                <h2 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=sekolah-rakyat">100 Sekolah Rakyat Dibuka 14 Juli, Tampung 9.700 Siswa</a></h2>
+              </div>
+            </article>
+
+            <a class="hero__brief" href="#infografis" data-reveal>
+              <span class="hero__brief-top">
+                <span class="eyebrow" style="color:inherit">Visual data</span>
+                <svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>
+              </span>
+              <span class="hero__brief-title">Angka di balik berita, dibaca dalam satu menit</span>
+              <span class="hero__brief-meta">Infografis &middot; 3 data baru <svg class="icon icon--xs" aria-hidden="true"><use href="#i-arrow-right" /></svg></span>
+            </a>
+          </div>
+        </div>
+
+        <aside class="rail" aria-label="Terpopuler dan newsletter">
+          <div class="rail-panel trending" data-reveal>
+            <h2 class="rail-title"><svg class="icon" aria-hidden="true"><use href="#i-fire" /></svg>Terpopuler</h2>
+            <ol class="trending__list">
+              <li class="trending__item">
+                <span class="trending__num" aria-hidden="true">01</span>
+                <a class="trending__link" href="detail-putin-trump.html?id=bsu-cair">
+                  <span class="trending__title">BSU Belum Cair? Ini Arti Notifikasi dan Cara Cek Status</span>
+                  <span class="trending__meta">Ekonomi &middot; 51,2 rb dibaca</span>
                 </a>
-                <aside class="sports-ad">
-                    <span class="ad-label">ADVERTISEMENT</span>
-                    <p class="ad-title">SPORTS STATION</p>
-                    <div class="ad-items">
-                        <div class="ad-item">
-                            <a href="https://www.youtube.com/watch?v=t3tbcCpVBVQ">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffHApSjdWwTISam1g3B24pLKOVzCSMK3w2g&s" alt="Sepatu Olahraga">
-                            </a>
-                            <p>Sneakers Kasual</p>
-                        </div>
-                        <div class="ad-item">
-                            <img src="https://down-id.img.susercontent.com/file/dc1d30fb7cee0a9d2146c2f2a6263c29" alt="Tas Olahraga">
-                            <p>Tas Gym Serbaguna</p>
-                        </div>
-                        <div class="ad-item">
-                            <img src="https://i1.sndcdn.com/artworks-KzAmXBa3SdcpZSzj-bSjkgA-t500x500.jpg" alt="Botol Minum">
-                            <p>Botol Minum Sport</p>
-                        </div>
-                        <div class="ad-item">
-                            <img src="https://i1.sndcdn.com/artworks-RecvVGtwh1i1Tkp2-5cTWNg-t500x500.jpg" alt="Sepatu Lari">
-                            <p>Sepatu Lari Premium</p>
-                        </div>
-                    </div>
-                    <button>Lihat Koleksi Lengkap</button>
-                </aside>
-            </div>
-        </section>
+              </li>
+              <li class="trending__item">
+                <span class="trending__num" aria-hidden="true">02</span>
+                <a class="trending__link" href="detail-putin-trump.html?id=notaris-citarum">
+                  <span class="trending__title">Pembunuh Notaris Wanita di Sungai Citarum Ditangkap</span>
+                  <span class="trending__meta">Hukum &middot; 44,6 rb dibaca</span>
+                </a>
+              </li>
+              <li class="trending__item">
+                <span class="trending__num" aria-hidden="true">03</span>
+                <a class="trending__link" href="detail-putin-trump.html?id=timnas">
+                  <span class="trending__title">Timnas Melaju ke Semifinal Usai Menang Dramatis</span>
+                  <span class="trending__meta">Olahraga &middot; 37,2 rb dibaca</span>
+                </a>
+              </li>
+              <li class="trending__item">
+                <span class="trending__num" aria-hidden="true">04</span>
+                <a class="trending__link" href="detail-putin-trump.html?id=ai-regulasi">
+                  <span class="trending__title">Debat Panas Regulasi AI: Akademisi vs Praktisi</span>
+                  <span class="trending__meta">Teknologi &middot; 34,7 rb dibaca</span>
+                </a>
+              </li>
+              <li class="trending__item">
+                <span class="trending__num" aria-hidden="true">05</span>
+                <a class="trending__link" href="detail-putin-trump.html?id=mrt-fase2">
+                  <span class="trending__title">MRT Fase 2 Dilanjutkan, Target Rampung Tahun Depan</span>
+                  <span class="trending__meta">Jabodetabek &middot; 23,7 rb dibaca</span>
+                </a>
+              </li>
+            </ol>
+          </div>
 
-        <section class="news-section" id="berita" tabindex="0" aria-label="Berita Nasional">
-            <h2>Berita Nasional Terkini</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9fc31334-aca1-4d55-a94d-50a8f29ea814.png" alt="Gedung pemerintahan dengan bendera merah putih berkibar dengan langit biru" />
-                    <div class="headline">Pemerintah Dorong Percepatan Vaksinasi Nasional untuk Capai Herd Immunity</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3640c3f2-e823-473f-89ba-f41ad6b3f7a1.png" alt="Suasana rapat kabinet dengan para pejabat mengenakan jas resmi" />
-                    <div class="headline">Menkeu Paparkan Proyeksi Ekonomi Indonesia di Forum Internasional</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/95cb0e08-7d07-443f-a2af-26ee2a58ee9e.png" alt="Jalan tol baru yang menghubungkan dua kota di daerah pedesaan" />
-                    <div class="headline">Pembangunan Ibu Kota Baru Terus Berlanjut, Target Selesai 2024</div>
-                </article>
-                 <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Berita+Nasional+4" alt="Ilustrasi berita nasional 4" />
-                    <div class="headline">Program Kartu Prakerja Gelombang Terbaru Dibuka, Simak Cara Daftarnya</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Berita+Nasional+5" alt="Ilustrasi berita nasional 5" />
-                    <div class="headline">Kebijakan Baru Transportasi Publik Demi Kurangi Kemacetan Kota Besar</div>
-                </article>
+          <div class="newsletter" data-reveal>
+            <span class="newsletter__icon"><svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg></span>
+            <h2 class="newsletter__title">Fajar Brief</h2>
+            <p class="newsletter__text">Lima berita penting, satu ringkasan. Dikirim setiap pagi sebelum kopi habis.</p>
+            <form class="newsletter__form" data-newsletter novalidate>
+              <label class="sr-only" for="email-rail">Alamat email</label>
+              <input class="newsletter__input" id="email-rail" type="email" name="email" placeholder="email@kamu.com" autocomplete="email" required />
+              <button class="newsletter__submit" type="submit" aria-label="Berlangganan newsletter">
+                <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+              </button>
+            </form>
+            <p class="newsletter__note">Gratis. Bisa berhenti kapan saja. Tanpa spam.</p>
+            <div class="newsletter__success" role="status">
+              <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+              <span>Kamu terdaftar. Cek inbox untuk konfirmasi.</span>
             </div>
-        </section>
+          </div>
+        </aside>
+      </div>
 
-        <section class="news-section" id="jabodetabek" tabindex="0" aria-label="Berita Jabodetabek">
-            <h2>Berita Jabodetabek Terbaru</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/34bb64d5-95e5-4ab2-8e2f-bc66de4f9b3b.png" alt="Keramaian jalan protokol di pusat Jakarta dengan lalu lintas padat" />
-                    <div class="headline">Proyek MRT Fase 2 Dilanjutkan, Target Rampung Akhir Tahun Depan</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/7a6bf5e8-e344-4217-bf76-b48a4967e395.png" alt="Pemukiman penduduk di pinggiran kota dengan suasana sore hari" />
-                    <div class="headline">Pemerintah Kota Bogor Gencarkan Revitalisasi Pasar Tradisional</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83676003-98b7-4e50-afea-58c4aad8bdca.png" alt="Suasana taman kota penuh pepohonan rindang dan orang yang berolahraga" />
-                    <div class="headline">Festival Budaya Betawi Kembali Digelar di Monas, Meriahkan Jakarta</div>
-                </article>
-                 <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Jabodetabek+4" alt="Ilustrasi berita Jabodetabek 4" />
-                    <div class="headline">Banjir Rob Mengancam Kawasan Pesisir Jakarta Utara, Warga Diminta Waspada</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="internasional" tabindex="0" aria-label="Berita Internasional">
-            <h2>Berita Internasional Pilihan</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/35eef85b-a509-4b9d-8af5-55261c2cc059.png" alt="Pertemuan para pemimpin dunia dalam konferensi diplomatik di ruang konferensi" />
-                    <div class="headline">Krisis Energi Global: Negara-negara Berusaha Mencari Solusi Jangka Panjang</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b3f2b7ed-41f8-4ece-ba24-e30b65505976.png" alt="Suasana perang dengan tank dan tentara di medan pertempuran" />
-                    <div class="headline">PBB Serukan Gencatan Senjata Segera di Zona Konflik Timur Tengah</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Internasional+3" alt="Ilustrasi berita internasional 3" />
-                    <div class="headline">Negara G7 Sepakati Paket Bantuan Ekonomi untuk Negara Berkembang</div>
-                </article>
-                 <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Internasional+4" alt="Ilustrasi berita internasional 4" />
-                    <div class="headline">Perubahan Iklim Mempengaruhi Hasil Panen Global, Ancaman Ketahanan Pangan</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="hukum" tabindex="0" aria-label="Berita Hukum">
-            <h2>Berita Hukum Terkini</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e07ca9c3-b531-47c9-81f2-1bb16d291ec4.png" alt="Gedung pengadilan dengan bendera merah putih dan langit biru" />
-                    <div class="headline">Mahkamah Agung Keluarkan Aturan Baru Terkait Perceraian</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src=https://i.ytimg.com/vi/zp5iL7DZMf8/hq720.jpg?sqp-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rsAOn4CLBUNgd7iVXbAgrcugZKMSj0yjGyLg alt="Palunya hakim di ruang sidang" />
-                    <div class="headline">Sidang Ijazah Jokowi dilaksanakan</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="politik" tabindex="0" aria-label="Berita Politik">
-            <h2>Dinamika Politik Indonesia</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b75b2b6b-7bd0-4b23-b293-9434c51acd94.png" alt="Suasana pidato politik dengan para hadirin mendengarkan dengan serius" />
-                    <div class="headline">Rancangan Undang-Undang Omnibus Law Kesehatan Masuk Tahap Finalisasi</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Politik+2" alt="Ilustrasi politik 2" />
-                    <div class="headline">Koalisi Partai Politik Bahas Strategi Menjelang Pilpres Mendatang</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="kolom" tabindex="0" aria-label="Berita Kolom">
-            <h2>Kolom Opini & Analisis</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5a826b13-a308-48a3-9d0c-20c767d25aca.png" alt="Meja kerja dengan laptop dan catatan opini" />
-                    <div class="headline">Opini: Tantangan Ekonomi Digital dan Peran UMKM di Indonesia</div>
-                </article>
-                <article class="news-article" tabindex="0">
-                    <img src="https://via.placeholder.com/300x160?text=Kolom+2" alt="Ilustrasi kolom 2" />
-                    <div class="headline">Analisis Mendalam: Masa Depan Energi Terbarukan di Asia Tenggara</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="blakblakan" tabindex="0" aria-label="Berita Blak Blakan">
-            <h2>Blak-blakan & Investigasi</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8912b8d7-6aa3-41fb-93df-f2e1862ce679.png" alt="Wawancara jujur dan langsung dengan narasumber penting" />
-                    <div class="headline">Investigasi Eksklusif: Jejak Korupsi di Proyek Megah Ibu Kota</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="prokontra" tabindex="0" aria-label="Berita Pro Kontra">
-            <h2>Pro Kontra Kebijakan</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6e53117d-6e76-45a1-af1d-dddfed3806aa.png" alt="Diskusi perdebatan antara dua pihak yang berbeda pendapat" />
-                    <div class="headline">Debat Panas Antara Akademisi dan Praktisi Mengenai Regulasi AI</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="infografis" tabindex="0" aria-label="Infografis">
-            <h2>Infografis Visual</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/db4da46b-e5ac-46ec-b432-b2561e454b3b.png" alt="Grafik dan diagram perkembangan ekonomi Indonesia" />
-                    <div class="headline">Infografis Data Persebaran Kasus Demam Berdarah di Jabodetabek</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="foto" tabindex="0" aria-label="Foto-foto Berita">
-            <h2>Galeri Foto Pilihan</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3c099cbb-8872-4c87-9614-b096ed8f8605.png" alt="Serangkaian foto kejadian terbaru dari event masyarakat" />
-                    <div class="headline">Foto-foto Indahnya Tradisi Upacara Adat di Pedalaman Sulawesi</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="video" tabindex="0" aria-label="Video Berita">
-            <h2>Video Berita Eksklusif</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/747d404f-6352-4bbb-8b14-b6b495637904.png" alt="Thumbnail video berita terkini tentang politik dan sosial" />
-                    <div class="headline">Video Detik-detik Penyelamatan Korban Longsor di Sumatera Barat</div>
-                </article>
-            </div>
-        </section>
-
-        <section class="news-section" id="indeks" tabindex="0" aria-label="Indeks Berita">
-            <h2>Indeks Berita Lengkap</h2>
-            <div class="news-grid">
-                <article class="news-article" tabindex="0">
-                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/07806976-7498-4751-ac24-05dd159f6f72.png" alt="Indeks daftar judul berita dari berbagai kategori" />
-                    <div class="headline">Daftar Lengkap Berita dan Artikel per Kategori dan Tanggal</div>
-                </article>
-            </div>
-        </section>
-    </main>
-
-    <aside class="sidebar-right" aria-label="Iklan dan sponsor kanan">
-        <div class="sidebar-ad">
-            <div class="ad-title">DICARI 15 ORANG UNTUK MERASAKAN PENGALAMAN RIDING PREMIUM BARENG NMAX TERBARU!</div>
+      <!-- ======================= STATISTIK ======================= -->
+      <section class="stats-band" aria-label="Redawn dalam angka" data-reveal style="margin-top: clamp(24px, 3vw, 36px)">
+        <div class="stat">
+          <span class="stat__value" data-counter="2.4" data-decimals="1" data-suffix=" jt">2,4 jt</span>
+          <span class="stat__label">Pembaca setiap bulan</span>
         </div>
-        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8492829d-ab1d-462a-864c-77f8fbe5d5ce.png"
-             alt="Dua pengendara motor berhelm hitam sedang berkendara di jalan perkotaan yang terang pada malam hari"
-             onerror="this.style.display='none';"/>
-        <button class="sidebar-ad button-yellow" tabindex="0" role="button">CARANYA KLIK DI SINI</button>
-        <div class="sidebar-ad small-black">MOTOR DISEDIAKAN PANITIA</div>
-    </aside>
-</div>
+        <div class="stat">
+          <span class="stat__value" data-counter="18.4" data-decimals="1" data-suffix=" rb">18,4 rb</span>
+          <span class="stat__label">Artikel terbit tahun ini</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" data-counter="240" data-suffix="+">240+</span>
+          <span class="stat__label">Jurnalis &amp; kontributor</span>
+        </div>
+        <div class="stat">
+          <span class="stat__value" data-counter="96" data-suffix="%">96%</span>
+          <span class="stat__label">Pembaca merasa terbantu</span>
+        </div>
+      </section>
+    </div>
 
-<script>
-    // Navbar button click handler to toggle news sections
-    const navButtons = document.querySelectorAll("nav.main-nav button.nav-btn");
-    const newsSections = document.querySelectorAll("section.news-section");
+    <div class="shell">
+      <!-- ======================= UNTUKMU ======================= -->
+      <section class="section" id="untukmu" aria-labelledby="untukmu-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-sparkle" /></svg>Kurasi personal</span>
+            <h2 class="section-title" id="untukmu-title">Untukmu</h2>
+            <p class="section-deck">Pilihan editor dari topik yang sedang ramai dibaca, disusun ulang setiap pagi.</p>
+          </div>
+          <div class="segmented" role="tablist" aria-label="Saring rekomendasi">
+            <button class="segmented__btn" type="button" role="tab" aria-selected="true" data-feed-tab="semua">
+              <svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg>Terbaru
+            </button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-feed-tab="populer">
+              <svg class="icon" aria-hidden="true"><use href="#i-fire" /></svg>Terpopuler
+            </button>
+            <button class="segmented__btn" type="button" role="tab" aria-selected="false" data-feed-tab="video">
+              <svg class="icon" aria-hidden="true"><use href="#i-video" /></svg>Video
+            </button>
+          </div>
+        </div>
 
-    function setActiveNav(targetId) {
-        navButtons.forEach(btn => {
-            if(btn.dataset.target === targetId){
-                btn.classList.add("active");
-                btn.setAttribute("aria-current", "page");
-            } else {
-                btn.classList.remove("active");
-                btn.removeAttribute("aria-current");
-            }
-        });
-        // Show relevant section, hide others
-        newsSections.forEach(section => {
-            if(section.id === targetId){
-                section.classList.add("active");
-                section.focus(); // Fokuskan ke bagian yang aktif untuk aksesibilitas
-            } else {
-                section.classList.remove("active");
-            }
-        });
-    }
+        <div class="feed-grid" id="feed-grid">
+          <article class="card" data-article-id="mrt-fase2" data-feed-item data-tags="baru populer" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/mrt-fase2.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="jabodetabek">Jabodetabek</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="mrt-fase2" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="mrt-fase2" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=mrt-fase2">Proyek MRT Fase 2 Dilanjutkan, Target Rampung Akhir Tahun Depan</a></h3>
+              <p class="card__deck">Pengerjaan terowongan memasuki segmen tersulit. Rekayasa lalu lintas disiapkan di delapan titik.</p>
+              <div class="card__meta"><time data-time="2026-11-11T11:55:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>4 menit baca</span></div>
+            </div>
+          </article>
 
-    // Attach event listeners to navigation buttons
-    navButtons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            setActiveNav(btn.dataset.target);
-        });
-    });
+          <article class="card" data-article-id="ruu-kesehatan" data-feed-item data-tags="baru" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/ruu-kesehatan.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="politik">Politik</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="ruu-kesehatan" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="ruu-kesehatan" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=ruu-kesehatan">RUU Omnibus Law Kesehatan Masuk Tahap Finalisasi</a></h3>
+              <p class="card__deck">Panitia kerja menargetkan pembahasan pasal krusial selesai pada sesi berikutnya.</p>
+              <div class="card__meta"><time data-time="2026-11-10T11:30:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
 
-    // Optional: prevent default form submit (simulate search)
-    const searchForm = document.querySelector(".top-bar form");
-    searchForm.addEventListener("submit", e => {
-        e.preventDefault();
-        alert("Fungsi pencarian belum tersedia");
-    });
+          <article class="card" data-article-id="pln-terbarukan" data-feed-item data-tags="baru populer" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/pln-terbarukan.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="ekonomi">Ekonomi</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="pln-terbarukan" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="pln-terbarukan" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=pln-terbarukan">PLN Perluas Jaringan Energi Terbarukan, Investasi Rp42 Triliun</a></h3>
+              <p class="card__deck">Pembangunan pembangkit surya dan angin menyasar kawasan timur dengan potensi besar.</p>
+              <div class="card__meta"><time data-time="2026-11-09T16:50:00+07:00">2 hari lalu</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
 
-    // Set 'home' as active by default on page load
-    document.addEventListener('DOMContentLoaded', () => {
-        setActiveNav('home');
-    });
-</script>
+          <article class="card" data-article-id="startup-ai" data-feed-item data-tags="baru" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/startup-ai.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="teknologi">Teknologi</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="startup-ai" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="startup-ai" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=startup-ai">Startup Lokal Kembangkan Asisten AI Berbahasa Daerah</a></h3>
+              <p class="card__deck">Model dilatih bersama komunitas penutur agar konteks budaya tetap terjaga.</p>
+              <div class="card__meta"><time data-time="2026-11-09T11:25:00+07:00">2 hari lalu</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
 
+          <article class="card" data-article-id="g7-bantuan" data-feed-item data-tags="baru" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/g7-bantuan.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="internasional">Internasional</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="g7-bantuan" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="g7-bantuan" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=g7-bantuan">Negara G7 Sepakati Paket Bantuan Ekonomi untuk Negara Berkembang</a></h3>
+              <p class="card__deck">Pendanaan diarahkan ke infrastruktur hijau, kesehatan, dan transformasi digital.</p>
+              <div class="card__meta"><time data-time="2026-11-10T16:05:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>4 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-article-id="kuliner" data-feed-item data-tags="baru" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/kuliner.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="gaya-hidup">Gaya Hidup</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="kuliner" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="kuliner" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=kuliner">Menjelajah Kuliner Pasar Lama: Dari Sarapan Hingga Tengah Malam</a></h3>
+              <p class="card__deck">Deretan warung legendaris menawarkan cita rasa yang bertahan lintas generasi.</p>
+              <div class="card__meta"><time data-time="2026-11-08T20:00:00+07:00">3 hari lalu</time><span class="meta__dot" aria-hidden="true"></span><span>6 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="card" hidden data-article-id="iklim-panen" data-feed-item data-tags="populer" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/iklim-panen.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="internasional">Internasional</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="iklim-panen" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="iklim-panen" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=iklim-panen">Perubahan Iklim Mempengaruhi Panen Global, Ancaman Ketahanan Pangan</a></h3>
+              <p class="card__deck">Musim tanam bergeser hingga tiga pekan di kawasan tropis.</p>
+              <div class="card__meta"><time data-time="2026-11-10T14:40:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="card" hidden data-article-id="festival-betawi" data-feed-item data-tags="video populer" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/festival-betawi.svg" alt="" width="1200" height="800" loading="lazy" />
+              <span class="play-fab" aria-hidden="true"><svg class="icon"><use href="#i-play" /></svg></span>
+              <div class="card__flag"><span class="badge badge--video"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-video" /></svg>Video</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="festival-betawi" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="festival-betawi" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+              <span class="card__duration">02:18</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=festival-betawi">Festival Budaya Betawi Kembali Digelar di Monas</a></h3>
+              <p class="card__deck">Pawai ondel-ondel dan pasar kuliner tradisional memeriahkan akhir pekan.</p>
+              <div class="card__meta"><span>Jabodetabek</span><span class="meta__dot" aria-hidden="true"></span><span>13,2 rb tayangan</span></div>
+            </div>
+          </article>
+
+          <article class="card" hidden data-article-id="longsor-sumbar" data-feed-item data-tags="video" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/longsor-sumbar.svg" alt="" width="1200" height="800" loading="lazy" />
+              <span class="play-fab" aria-hidden="true"><svg class="icon"><use href="#i-play" /></svg></span>
+              <div class="card__flag"><span class="badge badge--video"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-video" /></svg>Video</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="longsor-sumbar" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="longsor-sumbar" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+              <span class="card__duration">04:05</span>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=longsor-sumbar">Video Detik-detik Penyelamatan Korban Longsor di Sumatera Barat</a></h3>
+              <p class="card__deck">Tim SAR mengevakuasi warga dengan peralatan manual di medan sulit.</p>
+              <div class="card__meta"><span>Video</span><span class="meta__dot" aria-hidden="true"></span><span>26,4 rb tayangan</span></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="load-more">
+          <button class="btn btn--outline" type="button" data-load-more="#feed-grid">
+            <svg class="icon" aria-hidden="true"><use href="#i-plus" /></svg>
+            Muat lebih banyak
+          </button>
+          <p class="load-more__hint" data-feed-hint>6 artikel ditampilkan</p>
+        </div>
+      </section>
+
+      <!-- ======================= NASIONAL ======================= -->
+      <section class="section" id="nasional" aria-labelledby="nasional-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Indonesia</span>
+            <h2 class="section-title" id="nasional-title">Nasional</h2>
+            <p class="section-deck">Kebijakan, layanan publik, dan peristiwa yang berdampak langsung ke rumah kita.</p>
+          </div>
+          <a class="section-link" href="#untukmu">Lihat semua <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="split">
+          <article class="card card--feature" data-article-id="sekolah-rakyat" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/sekolah-rakyat.svg" alt="Ilustrasi suasana sekolah dan murid" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat" data-cat="nasional">Nasional</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="sekolah-rakyat" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="sekolah-rakyat" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="meta"><span class="badge badge--soft">Pendidikan</span><time data-time="2026-11-11T15:20:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>4 menit baca</span></div>
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=sekolah-rakyat">100 Sekolah Rakyat Dibuka 14 Juli, Tampung 9.700 Siswa dari Daerah Tertinggal</a></h3>
+              <p class="card__deck">Pendaftaran dibuka bertahap dengan kuota per kabupaten. Pemerintah menyiapkan asrama untuk daerah dengan jarak tempuh jauh.</p>
+              <div class="byline" style="margin-top:6px">
+                <span class="avatar-sm" aria-hidden="true">SA</span>
+                <span class="byline__text"><span class="byline__name">Sari Anindita</span><span class="byline__role">Reporter Pendidikan</span></span>
+              </div>
+            </div>
+          </article>
+
+          <div class="split__side">
+            <div class="panel" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-bolt" /></svg>Update cepat</h3>
+              <div class="news-list">
+                <a class="news-list__item" href="detail-putin-trump.html?id=spbu-ledakan" style="position:relative">
+                  <span class="news-list__text">
+                    <span class="chip chip--cat chip--sm" data-cat="nasional" style="align-self:flex-start">Nasional</span>
+                    <span class="news-list__title">Ledakan SPBU di kawasan industri, 45 orang luka-luka</span>
+                    <span class="meta"><time data-time="2026-11-11T16:40:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></span>
+                  </span>
+                  <img src="assets/img/covers/spbu-ledakan.svg" alt="" width="1200" height="800" loading="lazy" />
+                </a>
+                <a class="news-list__item" href="detail-putin-trump.html?id=mrt-fase2" style="position:relative">
+                  <span class="news-list__text">
+                    <span class="chip chip--cat chip--sm" data-cat="jabodetabek" style="align-self:flex-start">Jabodetabek</span>
+                    <span class="news-list__title">MRT Fase 2 capai progres 68 persen, target tahun depan</span>
+                    <span class="meta"><time data-time="2026-11-11T11:55:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>4 menit baca</span></span>
+                  </span>
+                  <img src="assets/img/covers/mrt-fase2.svg" alt="" width="1200" height="800" loading="lazy" />
+                </a>
+                <a class="news-list__item" href="detail-putin-trump.html?id=banjir-rob" style="position:relative">
+                  <span class="news-list__text">
+                    <span class="chip chip--cat chip--sm" data-cat="jabodetabek" style="align-self:flex-start">Jabodetabek</span>
+                    <span class="news-list__title">Banjir rob mengancam pesisir Jakarta Utara dini hari nanti</span>
+                    <span class="meta"><time data-time="2026-11-11T10:20:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>3 menit baca</span></span>
+                  </span>
+                  <img src="assets/img/covers/banjir-rob.svg" alt="" width="1200" height="800" loading="lazy" />
+                </a>
+              </div>
+            </div>
+            <div class="panel panel--primary" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>9.700</h3>
+              <p class="panel__text">kursi siswa disiapkan di 100 Sekolah Rakyat. Prioritas diberikan kepada keluarga penerima bantuan sosial.</p>
+              <a class="btn btn--sm btn--inverse" href="detail-putin-trump.html?id=sekolah-rakyat" style="margin-top:14px">Baca konteksnya</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= INTERNASIONAL ======================= -->
+      <section class="section" id="internasional" aria-labelledby="internasional-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Dunia</span>
+            <h2 class="section-title" id="internasional-title">Internasional</h2>
+            <p class="section-deck">Perubahan geopolitik, ekonomi global, dan iklim — dijelaskan tanpa jargon.</p>
+          </div>
+          <a class="section-link" href="detail-putin-trump.html?id=putin-trump">Sorotan utama <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="bento">
+          <article class="bento__large card card--feature" data-article-id="energi-global" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/energi-global.svg" alt="Ilustrasi konferensi energi internasional" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat" data-cat="internasional">Internasional</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="energi-global" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="energi-global" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="meta"><span class="badge badge--soft">Analisis</span><time data-time="2026-11-10T20:10:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>6 menit baca</span></div>
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=energi-global">Krisis Energi Global: Negara-negara Berusaha Mencari Solusi Jangka Panjang</a></h3>
+              <p class="card__deck">Harga yang volatil mendorong percepatan transisi dan diversifikasi pasokan, tetapi negara berkembang meminta pembiayaan yang adil.</p>
+            </div>
+          </article>
+
+          <article class="bento__tall card" data-article-id="pbb-gencatan" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/pbb-gencatan.svg" alt="Ilustrasi sidang Dewan Keamanan PBB" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="internasional">Internasional</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="pbb-gencatan" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=pbb-gencatan">PBB Serukan Gencatan Senjata Segera di Zona Konflik Timur Tengah</a></h3>
+              <p class="card__deck">Dewan Keamanan menggelar sesi darurat setelah lonjakan korban sipil.</p>
+              <div class="card__meta"><time data-time="2026-11-10T18:30:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="bento__item card" data-article-id="iklim-panen" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/iklim-panen.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="internasional">Iklim</span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=iklim-panen">Perubahan Iklim Menekan Hasil Panen Global</a></h3>
+              <div class="card__meta"><time data-time="2026-11-10T14:40:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="bento__item card" data-article-id="g7-bantuan" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/g7-bantuan.svg" alt="" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="internasional">Ekonomi</span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=g7-bantuan">G7 Sepakati Paket Bantuan untuk Negara Berkembang</a></h3>
+              <div class="card__meta"><time data-time="2026-11-10T16:05:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>4 menit baca</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <div class="shell">
+      <!-- ======================= EKONOMI ======================= -->
+      <section class="section" id="ekonomi" aria-labelledby="ekonomi-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Uang &amp; pasar</span>
+            <h2 class="section-title" id="ekonomi-title">Ekonomi</h2>
+            <p class="section-deck">Harga, kebijakan fiskal, dan keputusan yang menentukan isi dompet.</p>
+          </div>
+          <a class="section-link" href="#untukmu">Indeks ekonomi <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="split">
+          <article class="card card--feature" data-article-id="bsu-cair" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/bsu-cair.svg" alt="Ilustrasi uang rupiah dan dokumen" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat" data-cat="ekonomi">Ekonomi</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="bsu-cair" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="bsu-cair" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <div class="meta"><span class="badge badge--soft">Panduan</span><time data-time="2026-11-11T14:10:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>4 menit baca</span></div>
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=bsu-cair">BSU Belum Cair? Ini Arti Notifikasi dan Cara Cek Status Bantuan</a></h3>
+              <p class="card__deck">Status penerima dapat dicek lewat kanal resmi. Otoritas mengingatkan agar penerima tidak membagikan kode OTP atau mengklik tautan tidak dikenal.</p>
+              <div class="byline" style="margin-top:6px">
+                <span class="avatar-sm" aria-hidden="true">RW</span>
+                <span class="byline__text"><span class="byline__name">Rangga Wicaksana</span><span class="byline__role">Reporter Ekonomi</span></span>
+              </div>
+            </div>
+          </article>
+
+          <div class="split__side">
+            <div class="panel" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>Angka hari ini</h3>
+              <div class="news-list">
+                <a class="news-list__item" href="detail-putin-trump.html?id=pln-terbarukan" style="position:relative">
+                  <span class="news-list__text">
+                    <span class="news-list__title">PLN perluas energi terbarukan, investasi Rp42 triliun</span>
+                    <span class="meta"><span>Energi</span><span class="meta__dot" aria-hidden="true"></span><time data-time="2026-11-09T16:50:00+07:00">2 hari lalu</time></span>
+                  </span>
+                  <img src="assets/img/covers/pln-terbarukan.svg" alt="" width="1200" height="800" loading="lazy" />
+                </a>
+                <a class="news-list__item" href="detail-putin-trump.html?id=umkm-digital" style="position:relative">
+                  <span class="news-list__text">
+                    <span class="news-list__title">Tantangan ekonomi digital dan peran UMKM</span>
+                    <span class="meta"><span>Opini</span><span class="meta__dot" aria-hidden="true"></span><span>6 menit baca</span></span>
+                  </span>
+                  <img src="assets/img/covers/umkm-digital.svg" alt="" width="1200" height="800" loading="lazy" />
+                </a>
+              </div>
+            </div>
+            <a class="panel panel--primary" href="detail-putin-trump.html?id=pln-terbarukan" data-reveal>
+              <span class="eyebrow" style="color:inherit">Investasi hijau</span>
+              <h3 class="panel__title" style="font-size:var(--text-headline-s);margin-top:8px">Rp42 triliun untuk jaringan energi baru</h3>
+              <p class="panel__text">Tambahan kapasitas 1,8 GW dalam dua tahun. Fokus di kawasan timur.</p>
+              <span class="section-link" style="color:inherit;padding-left:0">Baca analisisnya <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= TEKNOLOGI ======================= -->
+      <section class="section" id="teknologi" aria-labelledby="teknologi-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Inovasi &amp; dampak</span>
+            <h2 class="section-title" id="teknologi-title">Teknologi</h2>
+            <p class="section-deck">Dari laboratorium ke ruang publik. Termasuk perdebatan yang belum selesai.</p>
+          </div>
+          <a class="section-link" href="#video">Video teknologi <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="split">
+          <div class="feed-grid feed-grid--2">
+            <article class="card card--feature" data-article-id="ai-regulasi" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/ai-regulasi.svg" alt="Ilustrasi jaringan kecerdasan buatan" width="1200" height="800" loading="lazy" />
+                <div class="card__flag"><span class="chip chip--cat" data-cat="teknologi">Teknologi</span></div>
+                <div class="card__actions">
+                  <button class="card__action" type="button" data-save="ai-regulasi" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                  <button class="card__action" type="button" data-share="ai-regulasi" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+                </div>
+              </div>
+              <div class="card__body">
+                <div class="meta"><span class="badge badge--soft">Pro kontra</span><time data-time="2026-11-09T19:20:00+07:00">2 hari lalu</time><span class="meta__dot" aria-hidden="true"></span><span>6 menit baca</span></div>
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=ai-regulasi">Debat Panas Antara Akademisi dan Praktisi Mengenai Regulasi AI</a></h3>
+                <p class="card__deck">Satu pihak mendorong aturan ketat, pihak lain khawatir inovasi terhambat. Keduanya sepakat transparansi jadi kunci.</p>
+              </div>
+            </article>
+
+            <article class="card" data-article-id="startup-ai" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/startup-ai.svg" alt="Ilustrasi startup dan bahasa" width="1200" height="800" loading="lazy" />
+                <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="teknologi">Teknologi</span></div>
+                <div class="card__actions">
+                  <button class="card__action" type="button" data-save="startup-ai" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                </div>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=startup-ai">Startup Lokal Kembangkan Asisten AI Berbahasa Daerah</a></h3>
+                <p class="card__deck">Model dilatih dengan korpus percakapan sehari-hari dan dievaluasi bersama komunitas penutur asli.</p>
+                <div class="card__meta"><time data-time="2026-11-09T11:25:00+07:00">2 hari lalu</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="split__side">
+            <div class="newsletter" data-reveal style="background:var(--aurora-gradient)">
+              <span class="newsletter__icon"><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg></span>
+              <h3 class="newsletter__title">Teknologi, tanpa hype</h3>
+              <p class="newsletter__text">Satu email tiap Kamis: apa yang benar-benar berubah, dan apa yang masih janji.</p>
+              <form class="newsletter__form" data-newsletter novalidate>
+                <label class="sr-only" for="email-tech">Alamat email</label>
+                <input class="newsletter__input" id="email-tech" type="email" name="email" placeholder="email@kamu.com" autocomplete="email" required />
+                <button class="newsletter__submit" type="submit" aria-label="Berlangganan newsletter teknologi">
+                  <svg class="icon" aria-hidden="true"><use href="#i-arrow-right" /></svg>
+                </button>
+              </form>
+              <p class="newsletter__note">Gratis. Tanpa spam.</p>
+              <div class="newsletter__success" role="status">
+                <svg class="icon" aria-hidden="true"><use href="#i-check" /></svg>
+                <span>Kamu terdaftar. Sampai Kamis!</span>
+              </div>
+            </div>
+            <div class="panel" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-info" /></svg>Yang perlu diketahui</h3>
+              <ul class="news-list" style="gap:0">
+                <li style="padding:10px 0;border-bottom:1px solid var(--md-outline-variant)"><span class="panel__text"><strong style="color:var(--md-on-surface)">Pendekatan berbasis risiko</strong> membedakan kewajiban untuk aplikasi berisiko rendah dan tinggi.</span></li>
+                <li style="padding:10px 0;border-bottom:1px solid var(--md-outline-variant)"><span class="panel__text"><strong style="color:var(--md-on-surface)">Transparansi data</strong> menjadi syarat minimum yang disepakati kedua kubu.</span></li>
+                <li style="padding:10px 0"><span class="panel__text">Draf regulasi dibuka untuk konsultasi publik pada kuartal berikutnya.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="debate" data-reveal style="margin-top:clamp(20px,2.6vw,32px)">
+          <div class="debate__side debate__side--pro">
+            <span class="debate__tag"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-globe" /></svg>Akademisi</span>
+            <h3 class="debate__title">&ldquo;Atur sekarang, sebelum biayanya lebih mahal.&rdquo;</h3>
+            <p class="debate__text">Pengawasan ketat diperlukan untuk melindungi masyarakat dari diskriminasi algoritmik dan penyalahgunaan data.</p>
+            <span class="debate__author"><span class="avatar-sm avatar-sm--tertiary" aria-hidden="true">AK</span>Aulia Kartika, peneliti kebijakan</span>
+          </div>
+          <div class="debate__mid" aria-hidden="true"><span class="debate__vs">VS</span>Pro kontra</div>
+          <div class="debate__side debate__side--contra">
+            <span class="debate__tag"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-sparkle" /></svg>Praktisi</span>
+            <h3 class="debate__title">&ldquo;Regulasi kaku akan memindahkan inovasi ke luar.&rdquo;</h3>
+            <p class="debate__text">Aturan sebaiknya fokus pada hasil dan audit, bukan membatasi cara teknis pengembangan model.</p>
+            <span class="debate__author"><span class="avatar-sm" aria-hidden="true">BP</span>Bayu Prasetyo, pendiri startup</span>
+          </div>
+        </div>
+
+        <div class="split" style="margin-top:clamp(20px,2.6vw,32px)">
+          <div class="poll" data-poll="ai-regulasi" data-reveal>
+            <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-chart" /></svg>Suara pembaca</span>
+            <h3 class="poll__question">Apakah regulasi AI di Indonesia perlu diperketat tahun ini?</h3>
+            <div class="poll__options" role="group" aria-label="Pilihan polling">
+              <button class="poll__option" type="button" data-pct="58">
+                <span class="poll__fill" aria-hidden="true"></span>
+                <span class="poll__label"><span class="poll__radio" aria-hidden="true"></span>Ya, segera diperketat</span>
+                <span class="poll__pct" aria-hidden="true">58%</span>
+              </button>
+              <button class="poll__option" type="button" data-pct="34">
+                <span class="poll__fill" aria-hidden="true"></span>
+                <span class="poll__label"><span class="poll__radio" aria-hidden="true"></span>Bertahap, berbasis risiko</span>
+                <span class="poll__pct" aria-hidden="true">34%</span>
+              </button>
+              <button class="poll__option" type="button" data-pct="8">
+                <span class="poll__fill" aria-hidden="true"></span>
+                <span class="poll__label"><span class="poll__radio" aria-hidden="true"></span>Belum perlu saat ini</span>
+                <span class="poll__pct" aria-hidden="true">8%</span>
+              </button>
+            </div>
+            <div class="poll__foot">
+              <span>4.210 suara &middot; bukan survei ilmiah</span>
+              <button class="poll__reset" type="button" data-poll-reset>Reset pilihan</button>
+            </div>
+          </div>
+
+          <div class="panel panel--ink" data-reveal>
+            <span class="eyebrow" style="color:var(--p-80)">Konteks</span>
+            <h3 class="panel__title" style="margin-top:10px">Regulasi AI di Indonesia</h3>
+            <p class="panel__text">Pemerintah menyusun kerangka regulasi berbasis risiko. Draf awal diharapkan dibahas pada kuartal berikutnya, dengan konsultasi publik terbuka.</p>
+            <ul class="news-list" style="margin-top:14px">
+              <li style="display:flex;align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid rgb(255 255 255 / .12)"><strong style="font-size:1.3rem;color:var(--p-80)">3</strong><span class="panel__text">kategori risiko yang tengah dibahas</span></li>
+              <li style="display:flex;align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid rgb(255 255 255 / .12)"><strong style="font-size:1.3rem;color:var(--p-80)">Q1</strong><span class="panel__text">target draf dibuka ke publik</span></li>
+              <li style="display:flex;align-items:baseline;gap:10px;padding:9px 0;border-top:1px solid rgb(255 255 255 / .12)"><strong style="font-size:1.3rem;color:var(--p-80)">2</strong><span class="panel__text">kubu yang sepakat pada transparansi</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= HUKUM ======================= -->
+      <section class="section" id="hukum" aria-labelledby="hukum-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Keadilan</span>
+            <h2 class="section-title" id="hukum-title">Hukum</h2>
+            <p class="section-deck">Perkara, putusan, dan proses yang menentukan kepercayaan publik.</p>
+          </div>
+          <a class="section-link" href="#untukmu">Arsip hukum <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="feed-grid">
+          <article class="card" data-article-id="notaris-citarum" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/notaris-citarum.svg" alt="Ilustrasi borgol dan proses hukum" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="hukum">Hukum</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="notaris-citarum" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="notaris-citarum" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=notaris-citarum">Pembunuh Notaris Wanita yang Tewas Terikat di Sungai Citarum Ditangkap</a></h3>
+              <p class="card__deck">Polisi menetapkan dua tersangka setelah memeriksa rekaman kamera pengawas dan keterangan saksi.</p>
+              <div class="card__meta"><time data-time="2026-11-11T13:30:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-article-id="ma-perceraian" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/ma-perceraian.svg" alt="Ilustrasi gedung pengadilan" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="hukum">Hukum</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="ma-perceraian" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="ma-perceraian" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=ma-perceraian">Mahkamah Agung Keluarkan Aturan Baru Terkait Perceraian</a></h3>
+              <p class="card__deck">Aturan memperjelas prosedur mediasi dan kelengkapan dokumen yang harus dipenuhi para pihak.</p>
+              <div class="card__meta"><time data-time="2026-11-10T13:15:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>3 menit baca</span></div>
+            </div>
+          </article>
+
+          <article class="card" data-article-id="korupsi-ikn" data-reveal>
+            <div class="card__media">
+              <img src="assets/img/covers/korupsi-ikn.svg" alt="Ilustrasi dokumen pengadaan" width="1200" height="800" loading="lazy" />
+              <div class="card__flag"><span class="badge badge--soft"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-sparkle" /></svg>Investigasi</span></div>
+              <div class="card__actions">
+                <button class="card__action" type="button" data-save="korupsi-ikn" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                <button class="card__action" type="button" data-share="korupsi-ikn" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+              </div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=korupsi-ikn">Investigasi Eksklusif: Jejak Penyimpangan di Proyek Megah Ibu Kota</a></h3>
+              <p class="card__deck">Dokumen internal menunjukkan sejumlah pengadaan berjalan tanpa evaluasi teknis yang memadai.</p>
+              <div class="card__meta"><time data-time="2026-11-09T14:10:00+07:00">2 hari lalu</time><span class="meta__dot" aria-hidden="true"></span><span>9 menit baca</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======================= POLITIK ======================= -->
+      <section class="section" id="politik" aria-labelledby="politik-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Kekuasaan</span>
+            <h2 class="section-title" id="politik-title">Politik</h2>
+            <p class="section-deck">Agenda parlemen, diplomasi, dan manuver menjelang kontestasi.</p>
+          </div>
+          <a class="section-link" href="#untukmu">Lihat semua <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="split">
+          <div class="feed-grid feed-grid--2">
+            <article class="card" data-article-id="dubes-as" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/dubes-as.svg" alt="Ilustrasi uji kelayakan duta besar" width="1200" height="800" loading="lazy" />
+                <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="politik">Politik</span></div>
+                <div class="card__actions">
+                  <button class="card__action" type="button" data-save="dubes-as" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                  <button class="card__action" type="button" data-share="dubes-as" aria-label="Bagikan artikel"><svg class="icon" aria-hidden="true"><use href="#i-share" /></svg></button>
+                </div>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=dubes-as">Usai Uji Kelayakan Calon Dubes AS: &ldquo;Doakan Dulu, Masih Proses&rdquo;</a></h3>
+                <p class="card__deck">Komisi terkait masih mendalami rekam jejak dan program kerja calon.</p>
+                <div class="card__meta"><time data-time="2026-11-11T12:45:00+07:00">Hari ini</time><span class="meta__dot" aria-hidden="true"></span><span>3 menit baca</span></div>
+              </div>
+            </article>
+
+            <article class="card" data-article-id="ruu-kesehatan" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/ruu-kesehatan.svg" alt="Ilustrasi rapat parlemen" width="1200" height="800" loading="lazy" />
+                <div class="card__flag"><span class="chip chip--cat chip--sm" data-cat="politik">Politik</span></div>
+                <div class="card__actions">
+                  <button class="card__action" type="button" data-save="ruu-kesehatan" aria-label="Simpan artikel" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg></button>
+                </div>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=ruu-kesehatan">RUU Omnibus Law Kesehatan Masuk Tahap Finalisasi</a></h3>
+                <div class="card__meta"><time data-time="2026-11-10T11:30:00+07:00">Kemarin</time><span class="meta__dot" aria-hidden="true"></span><span>5 menit baca</span></div>
+              </div>
+            </article>
+          </div>
+
+          <aside class="split__side">
+            <div class="panel" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>Agenda parlemen</h3>
+              <div class="news-list">
+                <div class="news-list__item" style="grid-template-columns:auto 1fr;align-items:start">
+                  <span class="badge badge--soft">12 Nov</span>
+                  <span class="news-list__text"><span class="news-list__title" style="font-size:var(--text-body-m)">Rapat pleno keputusan calon dubes</span></span>
+                </div>
+                <div class="news-list__item" style="grid-template-columns:auto 1fr;align-items:start">
+                  <span class="badge badge--soft">14 Nov</span>
+                  <span class="news-list__text"><span class="news-list__title" style="font-size:var(--text-body-m)">Dengar pendapat RUU Kesehatan</span></span>
+                </div>
+                <div class="news-list__item" style="grid-template-columns:auto 1fr;align-items:start">
+                  <span class="badge badge--soft">18 Nov</span>
+                  <span class="news-list__text"><span class="news-list__title" style="font-size:var(--text-body-m)">Konsultasi publik regulasi AI</span></span>
+                </div>
+              </div>
+            </div>
+            <a class="card card--horizontal" href="detail-putin-trump.html?id=koalisi-pilpres" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/koalisi-pilpres.svg" alt="" width="1200" height="800" loading="lazy" />
+              </div>
+              <div class="card__body">
+                <span class="chip chip--cat chip--sm" data-cat="politik" style="align-self:flex-start">Politik</span>
+                <h3 class="card__title">Koalisi Partai Bahas Strategi Menjelang Pilpres</h3>
+                <div class="card__meta"><span>4 menit baca</span></div>
+              </div>
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ======================= OLAHRAGA ======================= -->
+      <section class="section" id="olahraga" aria-labelledby="olahraga-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Lapangan</span>
+            <h2 class="section-title" id="olahraga-title">Olahraga</h2>
+            <p class="section-deck">Hasil, jadwal, dan cerita di balik angka di papan skor.</p>
+          </div>
+          <a class="section-link" href="#video">Sorotan video <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="split">
+          <article class="score-card" data-article-id="timnas" data-reveal>
+            <div class="score-card__body">
+              <span class="score-card__label"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-fire" /></svg>Hasil &middot; Semifinal</span>
+              <div class="score-card__teams" aria-label="Indonesia 2, Malaysia 1">
+                <span>IDN</span><strong>2 &ndash; 1</strong><span>MAS</span>
+              </div>
+              <h3 class="score-card__title"><a class="stretched-link" href="detail-putin-trump.html?id=timnas">Timnas Melaju ke Semifinal Usai Menang Dramatis di Menit Akhir</a></h3>
+              <div class="score-card__meta">
+                <span>Gol penentu menit 89</span>
+                <span aria-hidden="true">&middot;</span>
+                <span>Stadion Utama</span>
+                <span aria-hidden="true">&middot;</span>
+                <time data-time="2026-11-09T22:40:00+07:00">2 hari lalu</time>
+              </div>
+            </div>
+            <div class="score-card__media">
+              <img src="assets/img/covers/timnas.svg" alt="Selebrasi pemain setelah gol penentu" width="1200" height="800" loading="lazy" />
+            </div>
+          </article>
+
+          <aside class="split__side">
+            <div class="panel" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-clock" /></svg>Jadwal berikutnya</h3>
+              <div class="news-list">
+                <div class="news-list__item" style="grid-template-columns:auto 1fr;align-items:center">
+                  <span class="badge badge--soft">15 Nov</span>
+                  <span class="news-list__text"><span class="news-list__title" style="font-size:var(--text-body-m)">Semifinal &middot; 19.30 WIB</span><span class="meta">Stadion Nasional</span></span>
+                </div>
+                <div class="news-list__item" style="grid-template-columns:auto 1fr;align-items:center">
+                  <span class="badge badge--soft">19 Nov</span>
+                  <span class="news-list__text"><span class="news-list__title" style="font-size:var(--text-body-m)">Final &middot; 20.00 WIB</span><span class="meta">Menunggu undian</span></span>
+                </div>
+              </div>
+            </div>
+            <div class="panel panel--primary" data-reveal>
+              <h3 class="panel__title"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>14 tembakan</h3>
+              <p class="panel__text">Dominasi babak kedua. Pergantian pemain meningkatkan intensitas dan menghasilkan gol penentu.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <div class="shell">
+      <!-- ======================= VIDEO ======================= -->
+      <section class="section" id="video" aria-labelledby="video-title">
+        <div class="video-band">
+          <div class="section-head" data-reveal>
+            <div class="section-head__text">
+              <span class="eyebrow"><svg class="icon icon--sm" aria-hidden="true"><use href="#i-video" /></svg>Redawn Originals</span>
+              <h2 class="section-title" id="video-title">Video</h2>
+              <p class="section-deck">Liputan visual dan dokumenter pendek dari tim Redawn.</p>
+            </div>
+            <a class="section-link" href="#olahraga">Semua video <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+          </div>
+
+          <div class="video-grid">
+            <article class="card video-card" data-article-id="longsor-sumbar" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/longsor-sumbar.svg" alt="Ilustrasi evakuasi korban longsor" width="1200" height="800" loading="lazy" />
+                <span class="play-fab" aria-hidden="true"><svg class="icon"><use href="#i-play" /></svg></span>
+                <span class="video-card__duration">04:05</span>
+                <div class="card__flag"><span class="badge badge--video"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-video" /></svg>Video</span></div>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=longsor-sumbar">Detik-detik Penyelamatan Korban Longsor di Sumatera Barat</a></h3>
+                <div class="card__meta"><span>26,4 rb tayangan</span><span class="meta__dot" aria-hidden="true"></span><span>2 hari lalu</span></div>
+              </div>
+            </article>
+
+            <article class="card video-card" data-article-id="festival-betawi" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/festival-betawi.svg" alt="Ilustrasi pawai budaya Betawi" width="1200" height="800" loading="lazy" />
+                <span class="play-fab" aria-hidden="true"><svg class="icon"><use href="#i-play" /></svg></span>
+                <span class="video-card__duration">02:18</span>
+                <div class="card__flag"><span class="badge badge--video"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-video" /></svg>Video</span></div>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=festival-betawi">Melihat Lebih Dekat Pawai Budaya Betawi di Monas</a></h3>
+                <div class="card__meta"><span>13,2 rb tayangan</span><span class="meta__dot" aria-hidden="true"></span><span>Hari ini</span></div>
+              </div>
+            </article>
+
+            <article class="card video-card" data-article-id="upacara-adat" data-reveal>
+              <div class="card__media">
+                <img src="assets/img/covers/upacara-adat.svg" alt="Ilustrasi upacara adat" width="1200" height="800" loading="lazy" />
+                <span class="play-fab" aria-hidden="true"><svg class="icon"><use href="#i-play" /></svg></span>
+                <span class="video-card__duration">06:42</span>
+                <div class="card__flag"><span class="badge badge--video"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-video" /></svg>Dokumenter</span></div>
+              </div>
+              <div class="card__body">
+                <h3 class="card__title"><a class="stretched-link" href="detail-putin-trump.html?id=upacara-adat">Tiga Hari di Balik Upacara Adat Pedalaman Sulawesi</a></h3>
+                <div class="card__meta"><span>8,7 rb tayangan</span><span class="meta__dot" aria-hidden="true"></span><span>3 hari lalu</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ======================= OPINI ======================= -->
+      <section class="section" id="opini" aria-labelledby="opini-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Sudut pandang</span>
+            <h2 class="section-title" id="opini-title">Opini</h2>
+            <p class="section-deck">Argumen yang ditulis dengan data, bukan sekadar opini panas.</p>
+          </div>
+          <a class="section-link" href="#untukmu">Semua kolom <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="opinion-grid">
+          <article class="opinion" data-reveal>
+            <span class="opinion__quote" aria-hidden="true">&ldquo;</span>
+            <span class="opinion__kicker"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-globe" /></svg>Kebijakan energi</span>
+            <h3 class="opinion__title"><a class="stretched-link" href="detail-putin-trump.html?id=opini-energi">Transisi Energi Tidak Cukup dengan Janji, Butuh Akuntabilitas</a></h3>
+            <p class="opinion__text">Kebijakan energi perlu indikator yang terukur, transparan, dan dapat diaudit publik — bukan hanya seremoni tahunan.</p>
+            <div class="opinion__author">
+              <span class="avatar-sm" aria-hidden="true">AK</span>
+              <span class="byline__text"><span class="byline__name">Prof. Anindya Kusumastuti</span><span class="byline__role">Pengamat kebijakan energi</span></span>
+            </div>
+          </article>
+
+          <article class="opinion opinion--alt" data-reveal>
+            <span class="opinion__quote" aria-hidden="true">&ldquo;</span>
+            <span class="opinion__kicker"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-chart" /></svg>Ekonomi digital</span>
+            <h3 class="opinion__title"><a class="stretched-link" href="detail-putin-trump.html?id=umkm-digital">Tantangan Ekonomi Digital dan Peran UMKM di Indonesia</a></h3>
+            <p class="opinion__text">Digitalisasi membuka pasar baru, tetapi kesenjangan literasi dan akses pembiayaan masih nyata.</p>
+            <div class="opinion__author">
+              <span class="avatar-sm" aria-hidden="true">RM</span>
+              <span class="byline__text"><span class="byline__name">Dr. Rayhan Mahendra</span><span class="byline__role">Ekonom</span></span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ======================= INFOGRAFIS ======================= -->
+      <section class="section" id="infografis" aria-labelledby="infografis-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Satu menit, satu grafik</span>
+            <h2 class="section-title" id="infografis-title">Infografis</h2>
+            <p class="section-deck">Angka yang sulit dibayangkan, dibuat lebih mudah dibaca.</p>
+          </div>
+          <a class="section-link" href="#foto">Galeri visual <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="infografis-scroll">
+          <a class="infografis-card" href="detail-putin-trump.html?id=dbd-infografis" data-reveal>
+            <img src="assets/img/covers/dbd-infografis.svg" alt="" width="1200" height="800" loading="lazy" />
+            <span class="infografis-card__stat">1.284</span>
+            <span class="infografis-card__title">Kasus demam berdarah di Jabodetabek dalam sebulan terakhir</span>
+            <span class="infografis-card__meta"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-chart" /></svg>Data kesehatan &middot; 3 menit baca</span>
+          </a>
+          <a class="infografis-card" href="detail-putin-trump.html?id=iklim-panen" data-reveal>
+            <img src="assets/img/covers/iklim-panen.svg" alt="" width="1200" height="800" loading="lazy" />
+            <span class="infografis-card__stat">&minus;12%</span>
+            <span class="infografis-card__title">Penurunan hasil panen global akibat musim tanam yang bergeser</span>
+            <span class="infografis-card__meta"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-globe" /></svg>Iklim &amp; pangan &middot; 5 menit baca</span>
+          </a>
+          <a class="infografis-card" href="detail-putin-trump.html?id=bsu-cair" data-reveal>
+            <img src="assets/img/covers/bsu-cair.svg" alt="" width="1200" height="800" loading="lazy" />
+            <span class="infografis-card__stat">Rp600 rb</span>
+            <span class="infografis-card__title">Bantuan sosial tahap akhir dan cara memeriksa status pencairan</span>
+            <span class="infografis-card__meta"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-info" /></svg>Panduan &middot; 4 menit baca</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ======================= FOTO ======================= -->
+      <section class="section" id="foto" aria-labelledby="foto-title">
+        <div class="section-head" data-reveal>
+          <div class="section-head__text">
+            <span class="eyebrow">Melalui lensa</span>
+            <h2 class="section-title" id="foto-title">Galeri Foto</h2>
+            <p class="section-deck">Momen yang tidak cukup diceritakan dengan kata-kata.</p>
+          </div>
+          <a class="section-link" href="#video">Lihat dokumenter <svg class="icon icon--sm" aria-hidden="true"><use href="#i-arrow-right" /></svg></a>
+        </div>
+
+        <div class="gallery">
+          <a class="gallery__item gallery__item--wide gallery__item--tall" href="detail-putin-trump.html?id=upacara-adat" data-reveal>
+            <img src="assets/img/covers/upacara-adat.svg" alt="Ilustrasi upacara adat dengan pakaian tradisional" width="1200" height="800" loading="lazy" />
+            <span class="gallery__count"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-camera" /></svg>12 foto</span>
+            <span class="gallery__caption">Tiga hari di balik upacara adat pedalaman Sulawesi</span>
+          </a>
+          <a class="gallery__item" href="detail-putin-trump.html?id=festival-betawi" data-reveal>
+            <img src="assets/img/covers/festival-betawi.svg" alt="Ilustrasi pawai ondel-ondel" width="1200" height="800" loading="lazy" />
+            <span class="gallery__caption">Warna-warni pawai Betawi di Monas</span>
+          </a>
+          <a class="gallery__item" href="detail-putin-trump.html?id=kuliner" data-reveal>
+            <img src="assets/img/covers/kuliner.svg" alt="Ilustrasi kuliner pasar lama" width="1200" height="800" loading="lazy" />
+            <span class="gallery__caption">Sarapan di pasar lama</span>
+          </a>
+          <a class="gallery__item gallery__item--wide" href="detail-putin-trump.html?id=banjir-rob" data-reveal>
+            <img src="assets/img/covers/banjir-rob.svg" alt="Ilustrasi kawasan pesisir saat pasang" width="1200" height="800" loading="lazy" />
+            <span class="gallery__caption">Pesisir Jakarta Utara saat air pasang</span>
+          </a>
+        </div>
+      </section>
+
+      <noscript>
+        <p class="noscript">
+          <strong>Aktifkan JavaScript</strong> untuk pengalaman penuh: pencarian, tema gelap, dan daftar baca. Seluruh berita tetap dapat dibuka lewat tautan biasa.
+        </p>
+      </noscript>
+    </div>
+  </main>
+
+  <!-- ======================= FOOTER ======================= -->
+  <footer class="site-footer">
+    <div class="shell">
+      <div class="site-footer__grid">
+        <div>
+          <a class="brand" href="index.html" aria-label="Redawn. Fajar Baru Informasi — beranda">
+            <span class="brand__mark"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#brand-mark" /></svg></span>
+            <span class="brand__text">
+              <span class="brand__name">Redawn<em>.</em></span>
+              <span class="brand__tag">Fajar Baru Informasi</span>
+            </span>
+          </a>
+          <p class="footer-blurb">Kabar yang menjelaskan, bukan sekadar memberi tahu. Independen, terbuka soal koreksi, dan berpihak pada pembaca.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Instagram Redawn"><svg class="icon" aria-hidden="true"><use href="#i-instagram" /></svg></a>
+            <a href="#" aria-label="X Redawn"><svg class="icon" aria-hidden="true"><use href="#i-x-social" /></svg></a>
+            <a href="#" aria-label="YouTube Redawn"><svg class="icon" aria-hidden="true"><use href="#i-youtube" /></svg></a>
+            <a href="#" aria-label="Facebook Redawn"><svg class="icon" aria-hidden="true"><use href="#i-facebook" /></svg></a>
+            <a href="#" aria-label="RSS Redawn"><svg class="icon" aria-hidden="true"><use href="#i-rss" /></svg></a>
+          </div>
+          <p style="margin-top:18px"><span class="footer-badge"><svg class="icon icon--xs" aria-hidden="true"><use href="#i-check" /></svg>Terverifikasi Dewan Pers</span></p>
+        </div>
+
+        <div class="footer-col">
+          <h2>Rubrik</h2>
+          <ul>
+            <li><a href="#nasional">Nasional</a></li>
+            <li><a href="#internasional">Internasional</a></li>
+            <li><a href="#ekonomi">Ekonomi</a></li>
+            <li><a href="#teknologi">Teknologi</a></li>
+            <li><a href="#olahraga">Olahraga</a></li>
+            <li><a href="#opini">Opini</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Redawn</h2>
+          <ul>
+            <li><a href="#">Tentang kami</a></li>
+            <li><a href="#">Redaksi</a></li>
+            <li><a href="#">Pedoman media siber</a></li>
+            <li><a href="#">Kebijakan koreksi</a></li>
+            <li><a href="#">Karier</a></li>
+            <li><a href="#">Kontak</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h2>Bantuan</h2>
+          <ul>
+            <li><a href="#">Pusat bantuan</a></li>
+            <li><a href="#">Cara berlangganan</a></li>
+            <li><a href="#">Kebijakan privasi</a></li>
+            <li><a href="#">Syarat penggunaan</a></li>
+            <li><a href="#">Aksesibilitas</a></li>
+            <li><a href="#terbaru">Kembali ke atas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <div class="site-footer__legal">
+          <span>&copy; 2026 Redawn News. Purwarupa desain.</span>
+          <a href="#">Privasi</a>
+          <a href="#">Ketentuan</a>
+          <a href="#">Cookie</a>
+          <span>Konten berita bersifat fiktif.</span>
+        </div>
+        <button class="footer-theme" type="button" data-theme-toggle aria-label="Ganti tema: aktifkan mode gelap">
+          <svg class="icon icon--sm icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+          <svg class="icon icon--sm icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+          Ganti tema
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ======================= BOTTOM NAV (mobile) ======================= -->
+  <nav class="bottom-nav" aria-label="Navigasi cepat">
+    <a class="bottom-nav__item is-active" href="index.html" aria-current="page">
+      <svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>
+      Beranda
+    </a>
+    <button class="bottom-nav__item" type="button" data-search-open>
+      <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+      Cari
+    </button>
+    <button class="bottom-nav__item" type="button" data-bookmarks-open>
+      <svg class="icon" aria-hidden="true"><use href="#i-bookmark" /></svg>
+      Tersimpan
+      <span class="bottom-nav__badge icon-btn__badge" data-saved-count aria-hidden="true">0</span>
+    </button>
+    <button class="bottom-nav__item" type="button" data-action="login">
+      <svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>
+      Akun
+    </button>
+  </nav>
+
+  <button class="fab-top" id="fab-top" type="button" aria-label="Kembali ke atas">
+    <svg class="fab-top__ring" viewBox="0 0 52 52" aria-hidden="true">
+      <circle class="track" cx="26" cy="26" r="23" />
+      <circle class="bar" cx="26" cy="26" r="23" />
+    </svg>
+    <svg class="icon" aria-hidden="true"><use href="#i-arrow-up" /></svg>
+  </button>
+
+  <!-- ======================= DIALOG: PENCARIAN ======================= -->
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title">
+    <div class="dialog-surface">
+      <div class="search-bar">
+        <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+        <label class="sr-only" for="search-input" id="search-title">Cari berita di Redawn</label>
+        <input id="search-input" type="search" placeholder="Cari berita, topik, atau penulis&hellip;" autocomplete="off" spellcheck="false" />
+        <button class="icon-btn icon-btn--sm" type="button" data-search-close aria-label="Tutup pencarian">
+          <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="search-dialog__body">
+        <div id="search-default">
+          <div class="search-group">
+            <p class="search-group__title">Topik hangat</p>
+            <div class="search-chips">
+              <button class="chip" type="button" data-topic="Pemilu 2029">Pemilu 2029</button>
+              <button class="chip" type="button" data-topic="Transisi energi">Transisi energi</button>
+              <button class="chip" type="button" data-topic="Kecerdasan buatan">Kecerdasan buatan</button>
+              <button class="chip" type="button" data-topic="Ekonomi digital">Ekonomi digital</button>
+              <button class="chip" type="button" data-topic="Transportasi publik">Transportasi publik</button>
+              <button class="chip" type="button" data-topic="Perubahan iklim">Perubahan iklim</button>
+            </div>
+          </div>
+          <div class="search-group" id="search-recent-block" hidden>
+            <p class="search-group__title">Terakhir dicari <button type="button" data-clear-recent>Hapus</button></p>
+            <div class="search-recent" id="search-recent-list"></div>
+          </div>
+        </div>
+        <div class="search-results" id="search-results" hidden></div>
+        <div class="search-empty" id="search-empty" hidden>
+          <svg class="icon" aria-hidden="true"><use href="#i-search" /></svg>
+          <strong>Belum ada yang cocok</strong>
+          <span>Coba kata kunci yang lebih singkat, atau jelajahi topik di atas.</span>
+        </div>
+      </div>
+      <div class="search-footer">
+        <span id="search-count"></span>
+        <span><kbd>Enter</kbd> buka &middot; <kbd>Esc</kbd> tutup</span>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ======================= DIALOG: TERSIMPAN ======================= -->
+  <dialog class="sheet-dialog" id="bookmarks-dialog" aria-labelledby="bookmarks-title">
+    <div class="dialog-surface">
+      <div class="sheet-header">
+        <div class="sheet-header__title">
+          <h2 id="bookmarks-title">Tersimpan</h2>
+          <p>Daftar baca pribadi, tersimpan di perangkat ini.</p>
+        </div>
+        <button class="icon-btn" type="button" data-close-dialog aria-label="Tutup daftar tersimpan">
+          <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="sheet-body" id="bookmarks-body"></div>
+    </div>
+  </dialog>
+
+  <!-- ======================= DIALOG: MENU ======================= -->
+  <dialog class="sheet-dialog sheet-dialog--left" id="menu-dialog" aria-labelledby="menu-title">
+    <div class="dialog-surface">
+      <div class="sheet-header">
+        <div class="sheet-header__title">
+          <h2 id="menu-title">Menu</h2>
+          <p>Redawn News &middot; Fajar Baru Informasi</p>
+        </div>
+        <button class="icon-btn" type="button" data-close-dialog aria-label="Tutup menu">
+          <svg class="icon" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+      </div>
+      <div class="sheet-body">
+        <div class="menu-profile">
+          <span class="avatar" aria-hidden="true">AR</span>
+          <span class="stack">
+            <span class="menu-profile__name">Aldi Ramadhan</span>
+            <span class="menu-profile__mail">aldi@contoh.id &middot; Akun demo</span>
+          </span>
+        </div>
+
+        <div class="menu-links">
+          <a class="menu-link" href="index.html"><svg class="icon" aria-hidden="true"><use href="#i-home" /></svg>Beranda</a>
+          <a class="menu-link" href="#nasional"><svg class="icon" aria-hidden="true"><use href="#i-globe" /></svg>Nasional</a>
+          <a class="menu-link" href="#internasional"><svg class="icon" aria-hidden="true"><use href="#i-globe" /></svg>Internasional</a>
+          <a class="menu-link" href="#ekonomi"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>Ekonomi</a>
+          <a class="menu-link" href="#teknologi"><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg>Teknologi</a>
+          <a class="menu-link" href="#hukum"><svg class="icon" aria-hidden="true"><use href="#i-info" /></svg>Hukum</a>
+          <a class="menu-link" href="#politik"><svg class="icon" aria-hidden="true"><use href="#i-user" /></svg>Politik</a>
+          <a class="menu-link" href="#olahraga"><svg class="icon" aria-hidden="true"><use href="#i-fire" /></svg>Olahraga</a>
+          <a class="menu-link" href="#video"><svg class="icon" aria-hidden="true"><use href="#i-video" /></svg>Video</a>
+          <a class="menu-link" href="#opini"><svg class="icon" aria-hidden="true"><use href="#i-sparkle" /></svg>Opini</a>
+          <a class="menu-link" href="#infografis"><svg class="icon" aria-hidden="true"><use href="#i-chart" /></svg>Infografis</a>
+          <a class="menu-link" href="#foto"><svg class="icon" aria-hidden="true"><use href="#i-camera" /></svg>Foto</a>
+        </div>
+
+        <div class="menu-divider"></div>
+
+        <div class="menu-links">
+          <button class="menu-link" type="button" data-action="notifications">
+            <svg class="icon" aria-hidden="true"><use href="#i-bell" /></svg>Notifikasi
+            <span class="menu-link__meta">Baru</span>
+          </button>
+          <button class="menu-link" type="button" data-theme-toggle>
+            <svg class="icon icon-moon" aria-hidden="true"><use href="#i-moon" /></svg>
+            <svg class="icon icon-sun" aria-hidden="true"><use href="#i-sun" /></svg>
+            Ganti tema
+          </button>
+          <button class="menu-link" type="button" data-action="subscribe">
+            <svg class="icon" aria-hidden="true"><use href="#i-mail" /></svg>Langganan newsletter
+          </button>
+        </div>
+
+        <p style="margin-top:20px;font-size:11px;line-height:1.6;color:var(--md-on-surface-variant)">
+          Purwarupa desain Redawn News. Seluruh berita, nama, dan angka bersifat fiktif.
+        </p>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast-region" role="status" aria-live="polite" aria-atomic="false"></div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
